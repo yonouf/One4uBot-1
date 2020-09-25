@@ -13,7 +13,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, USER_TERM_ALIAS
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.eval(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ev(?: |$)(.*)")
 async def evaluate(query):
     """ For .eval command, evaluates the given Python expression. """
     if query.is_channel and not query.is_group:
@@ -70,7 +70,7 @@ async def evaluate(query):
         )
 
 
-@register(outgoing=True, pattern=r"^.exec(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.ex(?: |$)([\s\S]*)")
 async def run(run_q):
     """ For .exec command, which executes the dynamically created program """
     code = run_q.pattern_match.group(1)
@@ -136,7 +136,7 @@ execute. Use .help exec for an example.```"
         )
 
 
-@register(outgoing=True, pattern="^.term(?: |$)(.*)")
+@register(outgoing=True, pattern="^.t(?: |$)(.*)")
 async def terminal_runner(term):
     """ For .term command, runs bash commands and scripts on your server. """
     curruser = USER_TERM_ALIAS
@@ -194,8 +194,8 @@ async def terminal_runner(term):
         )
 
 
-CMD_HELP.update({"eval": ".eval 2 + 3\nUsage: Evalute mini-expressions."})
-CMD_HELP.update({"exec": ".exec print('hello')\nUsage: Execute small python scripts."})
-CMD_HELP.update(
-    {"term": ".term ls\nUsage: Run bash commands and scripts on your server."}
-)
+#CMD_HELP.update({"eval": ".eval 2 + 3\nUsage: Evalute mini-expressions."})
+#CMD_HELP.update({"exec": ".exec print('hello')\nUsage: Execute small python scripts."})
+#CMD_HELP.update(
+#    {"term": ".term ls\nUsage: Run bash commands and scripts on your server."}
+#)
