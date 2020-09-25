@@ -241,6 +241,6 @@ async def check_progress_for_dl(gid, event, previous):
 
 CMD_HELP.update(
     {
-        "aria": "⊙ .aria ⊙ .amag ⊙ .ator ⊙ .apause ⊙ .aresume ⊙ .aClear ⊙ .ashow ⊙"
+        "download": "⊙ .aria ⊙ .amag ⊙ .ator ⊙ .apause ⊙ .aresume ⊙ .aClear ⊙ .ashow ⊙ .dir Direct Support GD - Cloud Mail - Yandex - AFH - Zippy - MediaFire - SF - OSDN - GitHub ⊙"
     }
 )
