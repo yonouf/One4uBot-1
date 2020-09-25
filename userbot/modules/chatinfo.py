@@ -23,7 +23,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
+@register(pattern=".chin(?: |$)(.*)", outgoing=True)
 async def info(event):
     await event.edit("`Analysing the chat...`")
     chat = await get_chatinfo(event)
@@ -293,9 +293,9 @@ async def fetch_info(chat, event):
     return caption
 
 
-CMD_HELP.update(
-    {
-        "chatinfo": ".chatinfo [optional: <reply/tag/chat id/invite link>]\
-            \nUsage: Gets info of a chat. Some info might be limited due to missing permissions."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "chatinfo": ".chatinfo [optional: <reply/tag/chat id/invite link>]\
+#            \nUsage: Gets info of a chat. Some info might be limited due to missing permissions."
+#    }
+#)
