@@ -86,7 +86,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@register(outgoing=True, pattern="^.setgpic$")
+@register(outgoing=True, pattern="^.xsetgpic$")
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
     await gpic.edit("`Processing...`")
@@ -125,7 +125,7 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@register(outgoing=True, pattern="^.promote(?: |$)(.*)")
+@register(outgoing=True, pattern="^.pro(?: |$)(.*)")
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
@@ -160,7 +160,7 @@ async def promote(promt):
     # Try to promote if current user is admin or creator
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Promoted Successfully!`")
+        await promt.edit("`PROMOTED!`")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
@@ -178,7 +178,7 @@ async def promote(promt):
         )
 
 
-@register(outgoing=True, pattern="^.demote(?: |$)(.*)")
+@register(outgoing=True, pattern="^.dem(?: |$)(.*)")
 async def demote(dmod):
     """ For .demote command, demotes the replied/tagged person """
     # Admin right check
@@ -230,7 +230,7 @@ async def demote(dmod):
         )
 
 
-@register(outgoing=True, pattern="^.ban(?: |$)(.*)")
+@register(outgoing=True, pattern="^.b(?: |$)(.*)")
 async def ban(bon):
     """ For .ban command, bans the replied/tagged person """
     # Here laying the sanity check
@@ -290,7 +290,7 @@ async def ban(bon):
         )
 
 
-@register(outgoing=True, pattern="^.unban(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ub(?: |$)(.*)")
 async def nothanos(unbon):
     """ For .unban command, unbans the replied/tagged person """
     # Here laying the sanity check
@@ -328,7 +328,7 @@ async def nothanos(unbon):
         await unbon.edit("`Uh oh my unban logic broke!`")
 
 
-@register(outgoing=True, pattern="^.mute(?: |$)(.*)")
+@register(outgoing=True, pattern="^.m(?: |$)(.*)")
 async def spider(spdr):
     """
     This function is basically muting peeps
@@ -388,7 +388,7 @@ async def spider(spdr):
             return await spdr.edit("`Uh oh my mute logic broke!`")
 
 
-@register(outgoing=True, pattern="^.unmute(?: |$)(.*)")
+@register(outgoing=True, pattern="^.um(?: |$)(.*)")
 async def unmoot(unmot):
     """ For .unmute command, unmute the replied/tagged person """
     # Admin or creator check
@@ -478,7 +478,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xungmute(?: |$)(.*)")
 async def ungmoot(un_gmute):
     """ For .ungmute command, ungmutes the target in the userbot """
     # Admin or creator check
@@ -523,7 +523,7 @@ async def ungmoot(un_gmute):
             )
 
 
-@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xgmute(?: |$)(.*)")
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
     # Admin or creator check
@@ -568,7 +568,7 @@ async def gspider(gspdr):
             )
 
 
-@register(outgoing=True, pattern="^.zombies(?: |$)(.*)", groups_only=False)
+@register(outgoing=True, pattern="^.zo(?: |$)(.*)", groups_only=False)
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
@@ -585,7 +585,7 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = f"`Found` **{del_u}** `ghost/deleted/zombie account(s) in this group,\
-            \nclean them by using .zombies clean`"
+            \nclean them by using .zo clean`"
         await show.edit(del_status)
         return
 
@@ -638,7 +638,7 @@ async def rm_deletedacc(show):
         )
 
 
-@register(outgoing=True, pattern="^.all$")
+@register(outgoing=True, pattern="^.xall$")
 async def tagaso(event):
     """ For .all command, mention all of the member in the group chat"""
     if event.fwd_from:
@@ -651,7 +651,7 @@ async def tagaso(event):
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
 
-@register(outgoing=True, pattern="^.admins(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xadmins(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -751,7 +751,7 @@ async def pin(msg):
         )
 
 
-@register(outgoing=True, pattern="^.kick(?: |$)(.*)")
+@register(outgoing=True, pattern="^.k(?: |$)(.*)")
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
     # Admin or creator check
@@ -794,7 +794,7 @@ async def kick(usr):
         )
 
 
-@register(outgoing=True, pattern="^.users ?(.*)")
+@register(outgoing=True, pattern="^.xusers ?(.*)")
 async def get_users(show):
     """ For .users command, list all of the users in a chat. """
     info = await show.client.get_entity(show.chat_id)
@@ -887,7 +887,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@register(outgoing=True, pattern="^.usersdel ?(.*)")
+@register(outgoing=True, pattern="^.xusersdel ?(.*)")
 async def get_usersdel(show):
     """ For .usersdel command, list all of the deleted users in a chat. """
     info = await show.client.get_entity(show.chat_id)
@@ -982,7 +982,7 @@ async def get_userdel_from_id(user, event):
     return user_obj
 
 
-@register(outgoing=True, pattern="^.bots(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xbots(?: |$)(.*)")
 async def _(event):
     """ For .listbot command, list all of the bots of the chat. """
     if event.fwd_from:
@@ -1018,33 +1018,6 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "admin": ".promote <username/reply> <custom rank (optional)>\
-\nUsage: Provides admin rights to the person in the chat.\
-\n\n.demote <username/reply>\
-\nUsage: Revokes the person's admin permissions in the chat.\
-\n\n.ban <username/reply> <reason (optional)>\
-\nUsage: Bans the person off your chat.\
-\n\n.unban <username/reply>\
-\nUsage: Removes the ban from the person in the chat.\
-\n\n.mute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in the chat, works on admins too.\
-\n\n.unmute <username/reply>\
-\nUsage: Removes the person from the muted list.\
-\n\n.gmute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in all groups you have in common with them.\
-\n\n.ungmute <username/reply>\
-\nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
-\n\n.zombies\
-\nUsage: Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.\
-\n\n.all\
-\nUsage: Tag all member in the group chat.\
-\n\n.admins\
-\nUsage: Retrieves a list of admins in the chat.\
-\n\n.bots\
-\nUsage: Retrieves a list of bots in the chat.\
-\n\n.users or .users <name of member>\
-\nUsage: Retrieves all (or queried) users in the chat.\
-\n\n.setgppic <reply to image>\
-\nUsage: Changes the group's display picture."
+        "admin": "⊙ .pro promote ⊙ .dem demote ⊙ .b ban ⊙ .ub unban ⊙ .m mute ⊙ .um unmute ⊙ .zo zombies ⊙ .pin ⊙ .k kick ⊙ "
     }
 )
