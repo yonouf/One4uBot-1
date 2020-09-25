@@ -11,7 +11,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.covid (.*)")
+@register(outgoing=True, pattern="^.xcovid (.*)")
 async def corona(event):
     await event.edit("`Processing...`")
     country = event.pattern_match.group(1)
@@ -56,9 +56,9 @@ def format_integer(number, thousand_separator="."):
     return result
 
 
-CMD_HELP.update(
-    {
-        "covid": ".covid <country>"
-        "\nUsage: Get an information about data covid-19 in your country.\n"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "covid": ".covid <country>"
+#        "\nUsage: Get an information about data covid-19 in your country.\n"
+#    }
+#)
