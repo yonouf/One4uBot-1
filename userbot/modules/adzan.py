@@ -8,7 +8,7 @@ from userbot.events import register
 PLACE = ""
 
 
-@register(pattern="^.adzan(?: |$)(.*)")
+@register(pattern="^.xadzan(?: |$)(.*)")
 async def get_adzan(adzan):
     if not adzan.pattern_match.group(1):
         LOCATION = PLACE
@@ -53,9 +53,9 @@ async def get_adzan(adzan):
     await adzan.edit(result)
 
 
-CMD_HELP.update(
-    {
-        "adzan": ".adzan <city>\
-        \nUsage: Gets the prayer time for moslem."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "adzan": ".adzan <city>\
+#        \nUsage: Gets the prayer time for moslem."
+#    }
+#)
