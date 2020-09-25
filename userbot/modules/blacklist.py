@@ -29,7 +29,7 @@ async def on_new_message(event):
             break
 
 
-@register(outgoing=True, pattern="^.addbl(?: |$)(.*)")
+@register(outgoing=True, pattern="^.abl(?: |$)(.*)")
 async def on_add_black_list(addbl):
     text = addbl.pattern_match.group(1)
     to_blacklist = list(
@@ -44,7 +44,7 @@ async def on_add_black_list(addbl):
     )
 
 
-@register(outgoing=True, pattern="^.listbl(?: |$)(.*)")
+@register(outgoing=True, pattern="^.lbl(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = sql.get_chat_blacklist(listbl.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -69,7 +69,7 @@ async def on_view_blacklist(listbl):
         await listbl.edit(OUT_STR)
 
 
-@register(outgoing=True, pattern="^.rmbl(?: |$)(.*)")
+@register(outgoing=True, pattern="^.rbl(?: |$)(.*)")
 async def on_delete_blacklist(rmbl):
     text = rmbl.pattern_match.group(1)
     to_unblacklist = list(
@@ -82,15 +82,15 @@ async def on_delete_blacklist(rmbl):
     await rmbl.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
 
 
-CMD_HELP.update(
-    {
-        "blacklist": ".listbl\
-    \nUsage: Lists all active userbot blacklist in a chat.\
-    \n\n.addbl <keyword>\
-    \nUsage: Saves the message to the 'blacklist keyword'.\
-    \nThe bot will delete to the message whenever 'blacklist keyword' is mentioned.\
-    \n\n.rmbl <keyword>\
-    \nUsage: Stops the specified blacklist.\
-	\n btw you need permissions **Delete Messages** of admin."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "blacklist": "⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .listbl\
+#    \nUsage: Lists all active userbot blacklist in a chat.\
+#    \n\n.addbl <keyword>\
+#    \nUsage: Saves the message to the 'blacklist keyword'.\
+#    \nThe bot will delete to the message whenever 'blacklist keyword' is mentioned.\
+#    \n\n.rmbl <keyword>\
+#    \nUsage: Stops the specified blacklist.\
+#	\n btw you need permissions **Delete Messages** of admin."
+#    }
+#)
