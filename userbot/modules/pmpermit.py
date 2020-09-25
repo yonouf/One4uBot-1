@@ -384,6 +384,8 @@ async def add_pmsg(cust_msg):
 
 CMD_HELP.update(
     {
-        "pm": "⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off ⊙ .noton Notif On ⊙"
+        "pm": 
+        "⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off ⊙ .noton Notif On ⊙"
+        " .chin Chat Info ⊙"
     }
 )
