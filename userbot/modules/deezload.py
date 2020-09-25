@@ -19,7 +19,7 @@ from userbot import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(outgoing=True, pattern=r"^\.dz (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     """DeezLoader by @An0nimia
     Ported for UniBorg by @SpEcHlDe"""
@@ -158,10 +158,10 @@ async def upload_track(track_location, message):
     os.remove(track_location)
 
 
-CMD_HELP.update(
-    {
-        "deezload": ".deez <spotify/deezer link> <Format>"
-        "\nUsage: Download music from deezer."
-        "\n\n *Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "deezload": ".deez <spotify/deezer link> <Format>"
+#        "\nUsage: Download music from deezer."
+##       "\n\n *Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
+#    }
+#)
