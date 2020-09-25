@@ -81,13 +81,12 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await afk_e.edit(
-            f"Going AFK!\
-        \nReason: `{string}`"
+            f"I'm not here. `{string}`"
         )
     else:
-        await afk_e.edit("Going AFK!")
+        await afk_e.edit("Going away...")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "Going away...")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
@@ -185,8 +184,7 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(
-                        f"I'm AFK since {afk_since}.\
-                        \nReason: `{AFKREASON}`"
+                        f"I'm away since {afk_since}."
                     )
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -196,8 +194,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"I'm still AFK since {afk_since}.\
-                            \nReason: `{AFKREASON}`"
+                            f"I'm still away since {afk_since}."
                         )
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -269,8 +266,7 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"I'm AFK since {afk_since}.\
-                        \nReason: `{AFKREASON}`"
+                        f"I'm away since {afk_since}."
                     )
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -280,8 +276,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"I'm still AFK since {afk_since}.\
-                            \nReason: `{AFKREASON}`"
+                            f"I'm still away since {afk_since}."
                         )
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -292,7 +287,7 @@ async def afk_on_pm(sender):
                     COUNT_MSG = COUNT_MSG + 1
 
 
-CMD_HELP.update(
+#CMD_HELP.update(
     {
         "afk": ".afk [Optional Reason]\
 \nUsage: Sets you as afk.\nReplies to anyone who tags/PM's \
@@ -300,3 +295,4 @@ you telling them that you are AFK(reason).\n\nSwitches off AFK when you type bac
 "
     }
 )
+#
