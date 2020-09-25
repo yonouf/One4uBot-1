@@ -192,10 +192,10 @@ async def ANTI_SPAMBOTS(welcm):
         pass
 
 
-CMD_HELP.update(
-    {
-        "anti_spambot": "If enabled in config.env or env var,\
-        \nthis module will ban(or inform the admins of the group about) the\
-        \nspammer(s) if they match the userbot's anti-spam algorithm."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "anti_spambot": "If enabled in config.env or env var,\
+#        \nthis module will ban(or inform the admins of the group about) the\
+#        \nspammer(s) if they match the userbot's anti-spam algorithm."
+#    }
+#)
