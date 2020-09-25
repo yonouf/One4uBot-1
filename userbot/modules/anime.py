@@ -310,7 +310,7 @@ async def manga(event):
         await event.edit(rep, parse_mode="HTML", link_preview=False)
 
 
-@register(outgoing=True, pattern=r"^\.a(kaizoku|kayo) ?(.*)")
+@register(outgoing=True, pattern=r"^\.xxa(kaizoku|kayo) ?(.*)")
 async def site_search(event):
     message = await event.get_reply_message()
     search_query = event.pattern_match.group(2)
@@ -359,7 +359,7 @@ async def site_search(event):
             await event.edit(result, parse_mode="HTML")
 
 
-@register(outgoing=True, pattern=r"^\.char ?(.*)")
+@register(outgoing=True, pattern=r"^\.xchar ?(.*)")
 async def character(event):
     message = await event.get_reply_message()
     search_query = event.pattern_match.group(1)
@@ -408,7 +408,7 @@ async def character(event):
     )
 
 
-@register(outgoing=True, pattern=r"^\.upcoming ?(.*)")
+@register(outgoing=True, pattern=r"^\.xupcoming ?(.*)")
 async def upcoming(message):
     rep = "<b>Upcoming anime</b>\n"
     later = jikan.season_later()
@@ -527,7 +527,7 @@ async def get_anime(message):
     await message.client.send_file(message.chat_id, file=main_poster, caption=captions)
 
 
-@register(outgoing=True, pattern=r"^\.smanga ?(.*)")
+@register(outgoing=True, pattern=r"^\.xsmanga ?(.*)")
 async def manga(message):
     search_query = message.pattern_match.group(1)
     await message.get_reply_message()
@@ -542,7 +542,7 @@ async def manga(message):
     )
 
 
-@register(outgoing=True, pattern=r"^\.sanime ?(.*)")
+@register(outgoing=True, pattern=r"^\.xsanime ?(.*)")
 async def anime(message):
     search_query = message.pattern_match.group(1)
     await message.get_reply_message()
@@ -563,7 +563,7 @@ async def anime(message):
         )
 
 
-@register(outgoing=True, pattern=r"^\.whatanime")
+@register(outgoing=True, pattern=r"^\.xwhatanime")
 async def whatanime(e):
     media = e.media
     if not media:
@@ -649,23 +649,23 @@ def is_gif(file):
     return True
 
 
-CMD_HELP.update(
-    {
-        "anime": ".anime <anime>\
-    \nUsage: Returns with Anime information.\
-    \n\n.manga <manga name>\
-    \nUsage: Returns with the Manga information.\
-    \n\n.akaizoku or .akayo <anime name>\
-    \nUsage: Returns with the Anime Download link.\
-    \n\n.char <character name>\
-    \nUsage: Return with character information.\
-    \n\n.upcoming\
-    \nUsage: Returns with Upcoming Anime information.\
-    \n\n.scanime <anime> or .sanime <anime>\
-    \nUsage: Search anime.\
-    \n\n.smanga <manga>\
-    \nUsage: Search manga.\
-    \n\n.whatanime Reply with media.\
-    \nUsage: Find anime from media file."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "anime": ".anime <anime>\
+#    \nUsage: Returns with Anime information.\
+#    \n\n.manga <manga name>\
+#    \nUsage: Returns with the Manga information.\
+#    \n\n.akaizoku or .akayo <anime name>\
+#    \nUsage: Returns with the Anime Download link.\
+#    \n\n.char <character name>\
+#    \nUsage: Return with character information.\
+#    \n\n.upcoming\
+#    \nUsage: Returns with Upcoming Anime information.\
+#    \n\n.scanime <anime> or .sanime <anime>\
+#    \nUsage: Search anime.\
+#    \n\n.smanga <manga>\
+#    \nUsage: Search manga.\
+#    \n\n.whatanime Reply with media.\
+#    \nUsage: Find anime from media file."
+#    }
+#)
