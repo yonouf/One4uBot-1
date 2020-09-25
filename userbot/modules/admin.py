@@ -1018,6 +1018,6 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "admin": "⊙ .pro promote ⊙ .dem demote ⊙ .b ban ⊙ .ub unban ⊙ .m mute ⊙ .um unmute ⊙ .zo zombies ⊙ .pin ⊙ .k kick ⊙ "
+        "admin": "⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙ .pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙"
     }
 )
