@@ -1018,6 +1018,9 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "admin": "⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙ .pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙"
+        "admin": 
+        "⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙"
+        " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙\n"
+        "⊙ .fb Fed Ban ⊙ .uf Unban Fed ⊙ .af Add Fed ⊙ .df Delete Fed ⊙ .cf Clear All Fed ⊙ .lf List Fed ⊙"
     }
 )
