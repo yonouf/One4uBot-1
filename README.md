@@ -13,7 +13,7 @@
     <a href="https://t.me/userbotindo"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a>
 </p>
 
-![logo](https://i.ibb.co/02QVkHC/headersmina.jpg)
+![logo](https://telegra.ph/file/34de47d00656e00c0f4e2.jpg)
 
 ```
 #include <std/disclaimer.h>
