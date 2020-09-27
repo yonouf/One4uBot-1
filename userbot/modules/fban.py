@@ -144,7 +144,7 @@ async def unfban(event):
     )
 
 
-@register(outgoing=True, pattern=r"^\.af *(.*)")
+@register(outgoing=True, pattern=r"^\.adf *(.*)")
 async def addf(event):
     """Adds current chat to connected federations."""
     try:
