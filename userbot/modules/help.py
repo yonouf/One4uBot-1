@@ -25,5 +25,5 @@ async def help(event):
             string += " ⊙ "
         await event.edit(
             f"{string}"
-            ".h <module name> for Details."
+            "\n\.h <module name> for Details."
         )
