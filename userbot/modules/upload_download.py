@@ -26,7 +26,7 @@ from userbot.events import register
 from userbot.utils import humanbytes, progress
 
 
-@register(pattern=r".download(?: |$)(.*)", outgoing=True)
+@register(pattern=r".down(?: |$)(.*)", outgoing=True)
 async def download(target_file):
     """ For .download command, download files to the userbot's server. """
     await target_file.edit("Processing ...")
@@ -180,7 +180,7 @@ async def uploadir(udir_event):
         await udir_event.edit("404: Directory Not Found")
 
 
-@register(pattern=r".upload (.*)", outgoing=True)
+@register(pattern=r".upl (.*)", outgoing=True)
 async def upload(u_event):
     """ For .upload command, allows you to upload a file from the userbot's server """
     await u_event.edit("Processing ...")
@@ -348,11 +348,11 @@ async def uploadas(uas_event):
         await uas_event.edit("404: File Not Found")
 
 
-CMD_HELP.update(
-    {
-        "download": ".download <link|filename> or reply to media\
-\nUsage: Downloads file to the server.\
-\n\n.upload <path in server>\
-\nUsage: Uploads a locally stored file to the chat."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "download": ".download <link|filename> or reply to media\
+#\nUsage: Downloads file to the server.\
+#\n\n.upload <path in server>\
+#\nUsage: Uploads a locally stored file to the chat."
+#    }
+#)
