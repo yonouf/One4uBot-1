@@ -217,9 +217,9 @@ async def upstream(event):
     return
 
 
-CMD_HELP.update(
-    {
-        "userbot": 
-        ".upd (now or deploy) Update UserBot ⊙ "
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "userbot": 
+#        ".upd (now or deploy) Update UserBot ⊙ "
+#    }
+#)
