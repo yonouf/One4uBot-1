@@ -386,6 +386,6 @@ CMD_HELP.update(
     {
         "pm": 
         "⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off ⊙ .noton Notif On ⊙"
-        " .chin Chat Info ⊙"
+        " .chin Chat Info ⊙ .pg Purge ⊙ .purgeme Purge Me ⊙ .d Delete ⊙ .ed Edit ⊙ .sd Self Destruction"
     }
 )
