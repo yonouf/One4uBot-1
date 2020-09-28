@@ -123,9 +123,9 @@ async def lst(event):
         await event.edit(msg)
 
 
-CMD_HELP.update(
-    {
-        "file": ".ls <directory>"
-        "\nUsage: Get an information about data covid-19 in your country."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "file": ".ls <directory>"
+#        "\nUsage: Get an information about data covid-19 in your country."
+#    }
+#)
