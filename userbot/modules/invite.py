@@ -13,7 +13,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.invite(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xinvite(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -53,9 +53,9 @@ async def _(event):
             await event.delete()
 
 
-CMD_HELP.update(
-    {
-        "invite": ".invite <username> \
-        \nUsage: Invite some user or bots if u want."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "invite": ".invite <username> \
+#        \nUsage: Invite some user or bots if u want."
+#    }
+#)
