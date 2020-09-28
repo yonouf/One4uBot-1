@@ -176,21 +176,21 @@ async def remove_profilepic(delpfp):
     await delpfp.edit(f"`Successfully deleted {len(input_photos)} profile picture(s).`")
 
 
-CMD_HELP.update(
-    {
-        "profile": ".username <new_username>\
-\nUsage: Changes your Telegram username.\
-\n\n.name <firstname> or .name <firstname> <lastname>\
-\nUsage: Changes your Telegram name.(First and last name will get split by the first space)\
-\n\n.setpfp\
-\nUsage: Reply with .setpfp to an image to change your Telegram profie picture.\
-\n\n.setbio <new_bio>\
-\nUsage: Changes your Telegram bio.\
-\n\n.delpfp or .delpfp <number>/<all>\
-\nUsage: Deletes your Telegram profile picture(s).\
-\n\n.reserved\
-\nUsage: Shows usernames reserved by you.\
-\n\n.count\
-\nUsage: Counts your groups, chats, bots etc..."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "profile": ".username <new_username>\
+#\nUsage: Changes your Telegram username.\
+#\n\n.name <firstname> or .name <firstname> <lastname>\
+#\nUsage: Changes your Telegram name.(First and last name will get split by the first space)\
+#\n\n.setpfp\
+#\nUsage: Reply with .setpfp to an image to change your Telegram profie picture.\
+#\n\n.setbio <new_bio>\
+#\nUsage: Changes your Telegram bio.\
+#\n\n.delpfp or .delpfp <number>/<all>\
+#\nUsage: Deletes your Telegram profile picture(s).\
+#\n\n.reserved\
+#\nUsage: Shows usernames reserved by you.\
+#\n\n.count\
+#\nUsage: Counts your groups, chats, bots etc..."
+#    }
+#)
