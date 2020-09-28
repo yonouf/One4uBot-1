@@ -18,7 +18,7 @@ from userbot.utils import chrome, options
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
     """ For .ss command, capture a website's screenshot and send the photo. """
-    await url.edit("`Processing...`")
+    await url.edit("Loading...")
     chrome_options = await options()
     chrome_options.add_argument("--test-type")
     chrome_options.add_argument("--ignore-certificate-errors")
@@ -58,7 +58,7 @@ async def capture(url):
         message_id = url.reply_to_msg_id
     with io.BytesIO(im_png) as out_file:
         out_file.name = "screencapture.png"
-        await url.edit("`Uploading screenshot as file..`")
+        await url.edit("Uploading...")
         await url.client.send_file(
             url.chat_id,
             out_file,
@@ -69,10 +69,10 @@ async def capture(url):
         await url.delete()
 
 
-CMD_HELP.update(
-    {
-        "ss": ".ss <url>\
-    \nUsage: Takes a screenshot of a website and sends the screenshot.\
-    \nExample of a valid URL : `https://www.google.com`"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "ss": ".ss <url>\
+#    \nUsage: Takes a screenshot of a website and sends the screenshot.\
+#    \nExample of a valid URL : `https://www.google.com`"
+#    }
+#)
