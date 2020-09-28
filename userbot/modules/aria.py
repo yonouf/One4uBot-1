@@ -246,12 +246,12 @@ CMD_HELP.update(
         "\n⊙ .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙" 
         "\n⊙ .songn <artist - title> @WooMaiBot ⊙"
         "\n⊙ .songl <spotify|deezer Link> @MusicHuntersBot ⊙"
-        "\n⊙ .songf <artist - title> @SpotifyMusicDownloaderBot "
+        "\n⊙ .songf <artist - title> @SpotifyMusicDownloaderBot ⊙"
         "\n⊙ .songn now @WooMaiBot ⊙"
         "\n⊙ .songf now @SpotifyMusicDownloaderBot ⊙"
         "\n⊙ .vsong <artist - title> ⊙"
         "\n⊙ .deez <spotify|deezer link> <format> ⊙"
-        "\n⊙  format `FLAC`, `MP3_320`, `MP3_256`, `MP3_128` ⊙"
+        "\n⊙  format `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙"
         "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
     }
 )
