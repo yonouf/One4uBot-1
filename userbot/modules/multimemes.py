@@ -43,7 +43,7 @@ EMOJI_PATTERN = re.compile(
 )
 
 
-@register(outgoing=True, pattern=r"^\.glitch(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xglitch(?: |$)(.*)")
 async def glitch(event):
     if not event.reply_to_msg_id:
         await event.edit("`I Wont Glitch A Ghost!`")
@@ -118,7 +118,7 @@ async def glitch(event):
     os.remove(glitch_file)
 
 
-@register(outgoing=True, pattern=r"^\.mmf(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xmmf(?: |$)(.*)")
 async def mim(event):
     if not event.reply_to_msg_id:
         await event.edit(
@@ -273,14 +273,14 @@ async def quotess(qotli):
     if qotli.fwd_from:
         return
     if not qotli.reply_to_msg_id:
-        return await qotli.edit("```Reply to any user message.```")
+        return await qotli.edit("Reply to any user message.")
     reply_message = await qotli.get_reply_message()
     if not reply_message.text:
-        return await qotli.edit("```Reply to text message```")
+        return await qotli.edit("Reply to text message")
     chat = "@QuotLyBot"
     if reply_message.sender.bot:
-        return await qotli.edit("```Reply to actual users message.```")
-    await qotli.edit("```Making a Quote```")
+        return await qotli.edit("Reply to actual users message.")
+    await qotli.edit("Quoting")
     try:
         async with bot.conversation(chat) as conv:
             try:
@@ -293,11 +293,11 @@ async def quotess(qotli):
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 return await qotli.reply(
-                    "```Please unblock @QuotLyBot and try again```"
+                    "Please unblock @QuotLyBot and try again"
                 )
             if response.text.startswith("Hi!"):
                 await qotli.edit(
-                    "```Can you kindly disable your forward privacy settings for good?```"
+                    "Can you kindly disable your forward privacy settings for good?"
                 )
             else:
                 await qotli.delete()
@@ -309,7 +309,7 @@ async def quotess(qotli):
         await qotli.edit()
 
 
-@register(outgoing=True, pattern=r"^.hz(:? |$)(.*)?")
+@register(outgoing=True, pattern=r"^.xhz(:? |$)(.*)?")
 async def hazz(hazmat):
     await hazmat.edit("`Sending information...`")
     level = hazmat.pattern_match.group(2)
@@ -376,7 +376,7 @@ async def hazz(hazmat):
     return os.remove(downloaded_file_name)
 
 
-@register(outgoing=True, pattern=r"^.df(:? |$)([1-8])?")
+@register(outgoing=True, pattern=r"^.xdf(:? |$)([1-8])?")
 async def fryerrr(fry):
     await fry.edit("`Sending information...`")
     level = fry.pattern_match.group(2)
@@ -434,7 +434,7 @@ async def fryerrr(fry):
     return os.remove(downloaded_file_name)
 
 
-@register(outgoing=True, pattern="^.sg(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xsg(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -471,7 +471,7 @@ async def lastname(steal):
         )
 
 
-@register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xwaifu(?: |$)(.*)")
 async def waifu(animu):
     text = animu.pattern_match.group(1)
     if not text:
@@ -497,57 +497,57 @@ def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, "", inputString)
 
 
-CMD_HELP.update(
-    {
-        "glitch": ".glitch <1-8>\
-            \nUsage: Reply a sticker/image and send with cmd.\
-            \nvalue is range 1-8 if doenst it will give default value which is 2"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "glitch": ".glitch <1-8>\
+#            \nUsage: Reply a sticker/image and send with cmd.\
+#            \nvalue is range 1-8 if doenst it will give default value which is 2"
+#    }
+#)
 
-CMD_HELP.update(
-    {
-        "memify": ".mmf texttop ; textbottom\
-            \nUsage: Reply a sticker/image/gif and send with cmd."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "memify": ".mmf texttop ; textbottom\
+#            \nUsage: Reply a sticker/image/gif and send with cmd."
+#    }
+#)
 
-CMD_HELP.update(
-    {
-        "quotly": ".q \
-          \nUsage: Enhance ur text to sticker."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "quotly": ".q \
+#          \nUsage: Enhance ur text to sticker."
+#    }
+#)
 
-CMD_HELP.update(
-    {
-        "hazmat": ".hz or .hz [flip, x2, rotate (degree), background (number), black]"
-        "\nUsage: Reply to a image / sticker to suit up!"
-        "\n@hazmat_suit_bot"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "hazmat": ".hz or .hz [flip, x2, rotate (degree), background (number), black]"
+#        "\nUsage: Reply to a image / sticker to suit up!"
+#        "\n@hazmat_suit_bot"
+#    }
+#)
 
-CMD_HELP.update(
-    {
-        "deepfry": ".df or .df [level(1-8)]"
-        "\nUsage: deepfry image/sticker from the reply."
-        "\n@image_deepfrybot"
-    }
-)
-
-
-CMD_HELP.update(
-    {
-        "sangmata": ".sg \
-          \nUsage: Steal ur or friend name."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "deepfry": ".df or .df [level(1-8)]"
+#        "\nUsage: deepfry image/sticker from the reply."
+#        "\n@image_deepfrybot"
+#    }
+#)
 
 
-CMD_HELP.update(
-    {
-        "waifu": ".waifu \
-          \nUsage: Enchance your text with beautiful anime girl templates. \
-          \n@StickerizerBot"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "sangmata": ".sg \
+#          \nUsage: Steal ur or friend name."
+#    }
+#)
+
+
+#CMD_HELP.update(
+#    {
+#        "waifu": ".waifu \
+#          \nUsage: Enchance your text with beautiful anime girl templates. \
+#          \n@StickerizerBot"
+#    }
+#)
