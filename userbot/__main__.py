@@ -29,8 +29,9 @@ for module_name in ALL_MODULES:
 LOGS.info("You are running One4uBot [v3.7] by MoveAngel. MOD by BL4CKID.")
 
 LOGS.info(
-    "Congratulations, your userbot is now running !!! Test it by typing .on in any chat."
-    "If you need assistance, head to https://t.me/userbotindo")
+    "CONGRATULATIONS... your userbot is now running...!!!"
+    "Test it by typing .on in any chat and .menu for available menu."
+    "If you need assistance, head to https://t.me/userbotindo.")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
