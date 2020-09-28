@@ -214,7 +214,7 @@ async def _(dyno):
 CMD_HELP.update(
     {
         "heroku": 
-        ".upd <now or deploy> Update UserBot ⊙ .usg Usage ⊙ .set var <NEW VAR> <VALUE> Set Vars ⊙ "
+        ".bv Bot Version ⊙ .upd <now or deploy> Update UserBot ⊙ .usg Usage ⊙ .set var <NEW VAR> <VALUE> Set Vars ⊙ "
         ".get var <VAR> Info Vars ⊙ .del var <VAR> Delete Vars ⊙ .logs Get Logs Heroku ⊙"
     }
 )
