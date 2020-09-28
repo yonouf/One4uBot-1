@@ -228,14 +228,14 @@ async def _(event):
 #CMD_HELP.update(
 #    {
 #        "music": 
-#        "⊙ .songn <Artist - Song Title> @WooMaiBot Download ⊙"
-#        "\n⊙ .songl <Spotify/Deezer Link> @MusicHuntersBot Download ⊙"
-#        "\n⊙ .songf <Artist - Song Title> @SpotifyMusicDownloaderBot Download"
-#        "\n⊙ .songn now @WooMaiBot Download ⊙"
-#        "\n⊙ .songf now @SpotifyMusicDownloaderBot Download ⊙"
-#        "\n⊙ .vsong <Artist - Song Title> Find & Upload ⊙"
-#        "\n⊙ .deez <spotify/deezer link> <Format> ⊙"
-#        "\nFormat= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`⊙"
+#        "⊙ .songn <Artist - Title> @WooMaiBot ⊙"
+#        "\n⊙ .songl <Spotify/Deezer Link> @MusicHuntersBot ⊙"
+#        "\n⊙ .songf <Artist - Title> @SpotifyMusicDownloaderBot ⊙"
+#        "\n⊙ .songn now @WooMaiBot ⊙"
+#        "\n⊙ .songf now @SpotifyMusicDownloaderBot ⊙"
+#        "\n⊙ .vsong <Artist - Title> ⊙"
+#        "\n⊙ .deez <spotify/deezer link> <format> ⊙"
+#        "\n⊙ `format` `FLAC` `MP3_320` `MP3_256` `MP3_128`⊙"
 #        "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
 #    }
 #)
