@@ -45,7 +45,7 @@ async def mine(event):
     await event.edit(output_str)
 
 
-@register(outgoing=True, pattern="^.name")
+@register(outgoing=True, pattern="^.xname")
 async def update_name(name):
     """ For .name command, change your name in Telegram. """
     newname = name.text[6:]
@@ -61,7 +61,7 @@ async def update_name(name):
     await name.edit(NAME_OK)
 
 
-@register(outgoing=True, pattern="^.setpfp$")
+@register(outgoing=True, pattern="^.xsetpfp$")
 async def set_profilepic(propic):
     """ For .profilepic command, change your profile picture in Telegram. """
     await propic.edit("`Processing...`")
@@ -90,7 +90,7 @@ async def set_profilepic(propic):
             await propic.edit(INVALID_MEDIA)
 
 
-@register(outgoing=True, pattern="^.setbio (.*)")
+@register(outgoing=True, pattern="^.xsetbio (.*)")
 async def set_biograph(setbio):
     """ For .setbio command, set a new bio for your profile in Telegram. """
     await setbio.edit("`Processing...`")
@@ -148,7 +148,7 @@ async def count(event):
     await event.edit(result)
 
 
-@register(outgoing=True, pattern=r"^.delpfp")
+@register(outgoing=True, pattern=r"^.xdelpfp")
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     await delpfp.edit("`Processing...`")
