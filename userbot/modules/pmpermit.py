@@ -384,7 +384,7 @@ async def add_pmsg(cust_msg):
 
 CMD_HELP.update(
     {
-        "pm": 
+        "pmpermit": 
         "⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off ⊙ .noton Notif On ⊙"
         " .chin Chat Info ⊙ .pg Purge ⊙ .purgeme Purge Me ⊙ .d Delete ⊙ .ed Edit ⊙ .sd Self Destruction"
     }
