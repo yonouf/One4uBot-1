@@ -17,7 +17,7 @@ from userbot.events import register
 from userbot.utils import time_formatter
 
 
-@register(outgoing=True, pattern="^.random")
+@register(outgoing=True, pattern="^.xrandom")
 async def randomise(items):
     """ For .random command, get a random item from the list of items. """
     itemo = (items.text[8:]).split()
@@ -50,7 +50,7 @@ async def sleepybot(time):
 @register(outgoing=True, pattern="^.shutdown$")
 async def killbot(shut):
     """For .shutdown command, shut the bot down."""
-    await shut.edit("`Goodbye *Windows XP shutdown sound*....`")
+    await shut.edit("Shutdown...")
     if BOTLOG:
         await shut.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down")
     await bot.disconnect()
@@ -58,7 +58,7 @@ async def killbot(shut):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(reboot):
-    await reboot.edit("`*i would be back in a moment*`")
+    await reboot.edit("Restarting...")
     if BOTLOG:
         await reboot.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
     await bot.disconnect()
@@ -68,7 +68,7 @@ async def killdabot(reboot):
     exit()
 
 
-@register(outgoing=True, pattern="^.readme$")
+@register(outgoing=True, pattern="^.xreadme$")
 async def reedme(event):
     await event.edit(
         "Here's something for you to read:\n"
@@ -83,7 +83,7 @@ async def reedme(event):
 
 
 # Copyright (c) Gegham Zakaryan | 2019
-@register(outgoing=True, pattern="^.repeat (.*)")
+@register(outgoing=True, pattern="^.xrepeat (.*)")
 async def repeat(rep):
     cnt, txt = rep.pattern_match.group(1).split(" ", 1)
     replyCount = int(cnt)
@@ -105,7 +105,7 @@ async def repo_is_here(wannasee):
     )
 
 
-@register(outgoing=True, pattern="^.raw$")
+@register(outgoing=True, pattern="^.xraw$")
 async def raw(rawtext):
     the_real_message = None
     reply_to_id = None
@@ -129,59 +129,3 @@ async def raw(rawtext):
         )
 
 
-CMD_HELP.update(
-    {
-        "random": ".random <item1> <item2> ... <itemN>\
-\nUsage: Get a random item from the list of items."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "sleep": ".sleep <seconds>\
-\nUsage: Userbots get tired too. Let yours snooze for a few seconds."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "shutdown": ".shutdown\
-\nUsage: Sometimes you need to shut down your bot. Sometimes you just hope to\
-hear Windows XP shutdown sound... but you don't."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "repo": ".repo\
-\nUsage: If you are curious what makes the userbot work, this is what you need."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "readme": ".readme\
-\nUsage: Provide links to setup the userbot and it's modules."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "repeat": ".repeat <no.> <text>\
-\nUsage: Repeats the text for a number of times. Don't confuse this with spam tho."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "restart": ".restart\
-\nUsage: Restarts the bot !!"
-    }
-)
-
-CMD_HELP.update(
-    {
-        "raw": ".raw\
-\nUsage: Get detailed JSON-like formatted data about replied message."
-    }
-)
