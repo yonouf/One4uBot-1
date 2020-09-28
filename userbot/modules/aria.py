@@ -242,16 +242,16 @@ async def check_progress_for_dl(gid, event, previous):
 CMD_HELP.update(
     {
         "download": 
-        "⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ "
+        "⊙ ∂σωηℓσα∂ ⊙\n⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ "
         "\n⊙ .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙" 
-        "\n⊙ .songn <Artist - Song Title> @WooMaiBot Download ⊙"
-        "\n⊙ .songl <Spotify/Deezer Link> @MusicHuntersBot Download ⊙"
-        "\n⊙ .songf <Artist - Song Title> @SpotifyMusicDownloaderBot Download"
-        "\n⊙ .songn now @WooMaiBot Download ⊙"
-        "\n⊙ .songf now @SpotifyMusicDownloaderBot Download ⊙"
-        "\n⊙ .vsong <Artist - Song Title> Find & Upload ⊙"
-        "\n⊙ .deez <spotify/deezer link> <Format> ⊙"
-        "\nFormat= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`⊙"
+        "\n⊙ .songn <artist - title> @WooMaiBot ⊙"
+        "\n⊙ .songl <spotify|deezer Link> @MusicHuntersBot ⊙"
+        "\n⊙ .songf <artist - title> @SpotifyMusicDownloaderBot "
+        "\n⊙ .songn now @WooMaiBot ⊙"
+        "\n⊙ .songf now @SpotifyMusicDownloaderBot ⊙"
+        "\n⊙ .vsong <artist - title> ⊙"
+        "\n⊙ .deez <spotify|deezer link> <format> ⊙"
+        "\n⊙  format `FLAC`, `MP3_320`, `MP3_256`, `MP3_128` ⊙"
         "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
     }
 )
