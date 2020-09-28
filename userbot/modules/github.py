@@ -62,7 +62,7 @@ async def github(event):
                 await event.edit(REPLY)
 
 
-@register(outgoing=True, pattern="^.commit(?: |$)(.*)")
+@register(outgoing=True, pattern="^.comm(?: |$)(.*)")
 async def download(event):
     if event.fwd_from:
         return
@@ -135,11 +135,11 @@ async def git_commit(file_name, mone):
         return await mone.edit("`Committed Suicide`")
 
 
-CMD_HELP.update(
-    {
-        "github": ".git <username>"
-        "\nUsage: Like .whois but for GitHub usernames."
-        "\n\n.commit <reply file>"
-        "\nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "github": ".git <username>"
+#        "\nUsage: Like .whois but for GitHub usernames."
+#        "\n\n.commit <reply file>"
+#        "\nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled."
+#    }
+#)
