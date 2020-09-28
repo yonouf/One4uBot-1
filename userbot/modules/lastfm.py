@@ -55,7 +55,7 @@ LastLog = False
 # ================================================
 
 
-@register(outgoing=True, pattern="^.lastfm$")
+@register(outgoing=True, pattern="^.xlastfm$")
 async def last_fm(lastFM):
     """ For .lastfm command, fetch scrobble data from last.fm. """
     await lastFM.edit("Processing...")
@@ -181,7 +181,7 @@ async def get_curr_track(lfmbio):
     RUNNING = False
 
 
-@register(outgoing=True, pattern=r"^.lastbio (on|off)")
+@register(outgoing=True, pattern=r"^.xlastbio (on|off)")
 async def lastbio(lfmbio):
     arg = lfmbio.pattern_match.group(1).lower()
     global LASTFMCHECK
@@ -205,7 +205,7 @@ async def lastbio(lfmbio):
         await lfmbio.edit(LFM_BIO_ERR)
 
 
-@register(outgoing=True, pattern=r"^.lastlog (on|off)")
+@register(outgoing=True, pattern=r"^.xlastlog (on|off)")
 async def lastlog(lstlog):
     arg = lstlog.pattern_match.group(1).lower()
     global LastLog
@@ -220,13 +220,13 @@ async def lastlog(lstlog):
         await lstlog.edit(LFM_LOG_ERR)
 
 
-CMD_HELP.update(
-    {
-        "lastfm": ".lastfm\
-    \nUsage: Shows currently scrobbling track or most recent scrobbles if nothing is playing.\
-    \n\nlastbio: .lastbio <on/off>\
-    \nUsage: Enables/Disables last.fm current playing to bio.\
-    \n\nlastlog: .lastlog <on/off>\
-    \nUsage: Enable/Disable last.fm bio logging in the bot-log group."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "lastfm": ".lastfm\
+#    \nUsage: Shows currently scrobbling track or most recent scrobbles if nothing is playing.\
+#    \n\nlastbio: .lastbio <on/off>\
+#    \nUsage: Enables/Disables last.fm current playing to bio.\
+#    \n\nlastlog: .lastlog <on/off>\
+#    \nUsage: Enable/Disable last.fm bio logging in the bot-log group."
+#    }
+#)
