@@ -42,7 +42,7 @@ async def ocr_space_file(
     return r.json()
 
 
-@register(pattern=r".ocr (.*)", outgoing=True)
+@register(pattern=r".xocr (.*)", outgoing=True)
 async def ocr(event):
     if not OCR_SPACE_API_KEY:
         return await event.edit(
@@ -65,10 +65,10 @@ async def ocr(event):
     os.remove(downloaded_file_name)
 
 
-CMD_HELP.update(
-    {
-        "ocr": ".ocr <language> \
-    \nUsage: Reply to an image or sticker to extract text from it. \
-    \n\nGet language codes from [here](https://ocr.space/OCRAPI#PostParameters)."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "ocr": ".ocr <language> \
+#    \nUsage: Reply to an image or sticker to extract text from it. \
+#    \n\nGet language codes from [here](https://ocr.space/OCRAPI#PostParameters)."
+#    }
+#)
