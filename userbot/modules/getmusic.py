@@ -243,6 +243,6 @@ CMD_HELP.update(
         "\n\n⊙ .deez <spotify/deezer link> <Format>"
         "\nUsage: Download music from deezer."
         "\n\n*Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
-        "\n\n⊙ .rip<au|vi> Rip Audio Video ⊙
+        "\n\n⊙ .rip<au|vi> Rip Audio Video ⊙"
     }
 )
