@@ -19,7 +19,7 @@ from userbot import CMD_HELP, LOGS
 from userbot.events import register
 
 
-@register(pattern=r"^.decode$", outgoing=True)
+@register(pattern=r"^.xdecode$", outgoing=True)
 async def parseqr(qr_e):
     """ For .decode command, get QR Code/BarCode content from the replied photo. """
     downloaded_file_name = await qr_e.client.download_media(
@@ -54,7 +54,7 @@ async def parseqr(qr_e):
     await qr_e.edit(qr_contents)
 
 
-@register(pattern=r".barcode(?: |$)([\s\S]*)", outgoing=True)
+@register(pattern=r".xbarcode(?: |$)([\s\S]*)", outgoing=True)
 async def bq(event):
     """ For .barcode command, genrate a barcode containing the given content. """
     await event.edit("`Processing..`")
@@ -91,7 +91,7 @@ async def bq(event):
     await event.delete()
 
 
-@register(pattern=r".makeqr(?: |$)([\s\S]*)", outgoing=True)
+@register(pattern=r".xmakeqr(?: |$)([\s\S]*)", outgoing=True)
 async def make_qr(makeqr):
     """ For .makeqr command, make a QR Code containing the given content. """
     input_str = makeqr.pattern_match.group(1)
@@ -131,20 +131,20 @@ async def make_qr(makeqr):
     await makeqr.delete()
 
 
-CMD_HELP.update(
-    {
-        "qr": ".makeqr <content>\
-\nUsage: Make a QR Code from the given content.\
-\nExample: .makeqr www.google.com\
-\nNote: use .decode <reply to barcode/qrcode> to get decoded content."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "barcode": ".barcode <content>\
-\nUsage: Make a BarCode from the given content.\
-\nExample: .barcode www.google.com\
-\nNote: use .decode <reply to barcode/qrcode> to get decoded content."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "qr": ".makeqr <content>\
+#\nUsage: Make a QR Code from the given content.\
+#\nExample: .makeqr www.google.com\
+#\nNote: use .decode <reply to barcode/qrcode> to get decoded content."
+#    }
+#)
+#
+#CMD_HELP.update(
+#    {
+#        "barcode": ".barcode <content>\
+#\nUsage: Make a BarCode from the given content.\
+#\nExample: .barcode www.google.com\
+#\nNote: use .decode <reply to barcode/qrcode> to get decoded content."
+#    }
+#)
