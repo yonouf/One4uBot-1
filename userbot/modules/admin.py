@@ -1017,7 +1017,7 @@ async def _(event):
 
 @register(outgoing=True, pattern="^.menu$")
 async def dumtyer(dumtter):
-    await dumtter.edit("⊙ SUBMENU ⊙\n⊙ admin ⊙ download ⊙ gdrive ⊙ userbot ⊙ pmpermit ⊙ miscs ⊙\n Usage .h subsmenu for Details.")
+    await dumtter.edit("⊙ sυвмεηυ ⊙\n⊙ admin ⊙ download ⊙ gdrive ⊙ userbot ⊙ pmpermit ⊙ miscs ⊙\n⊙ Usage .h subsmenu for Details. ⊙")
 
 CMD_HELP.update(
     {
