@@ -45,7 +45,7 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.weather(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xweather(?: |$)(.*)")
 async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
 
@@ -143,7 +143,7 @@ async def get_weather(weather):
     )
 
 
-@register(outgoing=True, pattern="^.wtr(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xwtr(?: |$)(.*)")
 async def get_wtr(wtr):
     """ For .wtr command, gets the current weather of a city. """
 
@@ -199,11 +199,11 @@ async def get_wtr(wtr):
     await wtr.edit(text)
 
 
-CMD_HELP.update(
-    {
-        "weather": ".weather <city> or .weather <city>, <country name/code>\
-    \nUsage: Gets the weather of a city.",
-        "wtr": ".wtr <city> or .wtr <city>, <country name/code>\
-    \nUsage: Gets the weather of a city.",
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "weather": ".weather <city> or .weather <city>, <country name/code>\
+#    \nUsage: Gets the weather of a city.",
+#        "wtr": ".wtr <city> or .wtr <city>, <country name/code>\
+#    \nUsage: Gets the weather of a city.",
+#    }
+#)
