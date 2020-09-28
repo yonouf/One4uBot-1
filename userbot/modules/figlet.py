@@ -11,7 +11,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.figlet(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.fig(?: |$)(.*)")
 async def figlet(fg):
     if fg.fwd_from:
         return
@@ -37,7 +37,7 @@ async def figlet(fg):
         cmd = None
         text = input_str
     else:
-        await fg.edit("`Please add some text to figlet`")
+        await fg.edit("Please add some text to figlet")
         return
     if cmd is not None:
         try:
@@ -52,11 +52,11 @@ async def figlet(fg):
     await fg.delete()
 
 
-CMD_HELP.update(
-    {
-        "figlet": ".figlet"
-        "\nUsage: Enhance ur text to strip line with anvil."
-        "\n\nExample: `.figlet <Text Style>`"
-        "\nSTYLE LIST: `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "figlet": ".figlet"
+#        "\nUsage: Enhance ur text to strip line with anvil."
+#        "\n\nExample: `.figlet <Text Style>`"
+#        "\nSTYLE LIST: `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`"
+#    }
+#)
