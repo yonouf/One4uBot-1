@@ -688,6 +688,6 @@ async def wolfram(wvent):
 CMD_HELP.update({
             "Misc": 
             "⊙ .img Image ⊙ .rip<au|vi> Rip Audio Video ⊙ .g Google ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙ "
-            ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg Telegraph ⊙ .ss ScreenShot "
+            ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg Telegraph ⊙ .ss ScreenShot ⊙ .q Quotly"
     }
 )
