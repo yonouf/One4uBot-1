@@ -15,7 +15,7 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.ts (.*)")
+@register(outgoing=True, pattern=r"^\.xts (.*)")
 async def gengkapak(e):
     await e.edit("`Please wait, fetching results...`")
     query = e.pattern_match.group(1)
@@ -74,7 +74,7 @@ def dogbin(magnets):
     return urls
 
 
-@register(outgoing=True, pattern=r"^.tos(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.xtos(?: |$)(.*)")
 async def tor_search(event):
     if event.fwd_from:
         return
@@ -157,11 +157,11 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CMD_HELP.update(
-    {
-        "torrent": ".ts Search query.\
-    \nUsage: Search for torrent query and post to dogbin.\
-    \n\n.tos Search query.\
-    \nUsage: Search for torrent magnet from query."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "torrent": ".ts Search query.\
+#    \nUsage: Search for torrent query and post to dogbin.\
+#    \n\n.tos Search query.\
+#    \nUsage: Search for torrent magnet from query."
+#    }
+#)
