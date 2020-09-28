@@ -16,7 +16,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.pic(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xpic(?: |$)(.*)")
 async def on_file_to_photo(pics):
     await pics.edit("Converting Document image to Full Size Image\nPlease wait...")
     await sleep(1.5)
@@ -52,9 +52,9 @@ async def on_file_to_photo(pics):
         return
 
 
-CMD_HELP.update(
-    {
-        "pics": ".pic <with reply any document image> \
-        \nUsage: Convert any Document Image to Full Size Image."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "pics": ".pic <with reply any document image> \
+#        \nUsage: Convert any Document Image to Full Size Image."
+#    }
+#)
