@@ -11,7 +11,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.cspam (.*)")
+@register(outgoing=True, pattern="^.xcspam (.*)")
 async def leter_spam(cspammer):
     cspam = str(cspammer.pattern_match.group(1))
     message = cspam.replace(" ", "")
@@ -24,7 +24,7 @@ async def leter_spam(cspammer):
         )
 
 
-@register(outgoing=True, pattern="^.wspam (.*)")
+@register(outgoing=True, pattern="^.xwspam (.*)")
 async def word_spam(wspammer):
     wspam = str(wspammer.pattern_match.group(1))
     message = wspam.split()
@@ -37,7 +37,7 @@ async def word_spam(wspammer):
         )
 
 
-@register(outgoing=True, pattern="^.spam (.*)")
+@register(outgoing=True, pattern="^.xspam (.*)")
 async def spammer(spamm):
     counter = int(spamm.pattern_match.group(1).split(" ", 1)[0])
     spam_message = str(spamm.pattern_match.group(1).split(" ", 1)[1])
@@ -49,7 +49,7 @@ async def spammer(spamm):
         )
 
 
-@register(outgoing=True, pattern="^.picspam")
+@register(outgoing=True, pattern="^.xpicspam")
 async def tiny_pic_spam(pspam):
     message = pspam.text
     text = message.split()
@@ -64,7 +64,7 @@ async def tiny_pic_spam(pspam):
         )
 
 
-@register(outgoing=True, pattern="^.delayspam (.*)")
+@register(outgoing=True, pattern="^.xdelayspam (.*)")
 async def dspammer(dspam):
     spamDelay = float(dspam.pattern_match.group(1).split(" ", 2)[0])
     counter = int(dspam.pattern_match.group(1).split(" ", 2)[1])
@@ -79,18 +79,18 @@ async def dspammer(dspam):
         )
 
 
-CMD_HELP.update(
-    {
-        "spam": ".cspam <text>\
-\nUsage: Spam the text letter by letter.\
-\n\n.spam <count> <text>\
-\nUsage: Floods text in the chat !!\
-\n\n.wspam <text>\
-\nUsage: Spam the text word by word.\
-\n\n.picspam <count> <link to image/gif>\
-\nUsage: As if text spam was not enough !!\
-\n\n.delayspam <delay> <count> <text>\
-\nUsage: .bigspam but with custom delay.\
-\n\n\nNOTE : Spam at your own risk !!"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "spam": ".cspam <text>\
+#\nUsage: Spam the text letter by letter.\
+#\n\n.spam <count> <text>\
+#\nUsage: Floods text in the chat !!\
+#\n\n.wspam <text>\
+#\nUsage: Spam the text word by word.\
+#\n\n.picspam <count> <link to image/gif>\
+#\nUsage: As if text spam was not enough !!\
+#\n\n.delayspam <delay> <count> <text>\
+#\nUsage: .bigspam but with custom delay.\
+#\n\n\nNOTE : Spam at your own risk !!"
+#    }
+#)
