@@ -22,7 +22,7 @@ auth_url = r["auth_url"]
 @register(outgoing=True, pattern="^.tg (m|t)$")
 async def telegraphs(graph):
     """For .telegraph command, upload media & text to telegraph site."""
-    await graph.edit("`Processing...`")
+    await graph.edit("Loading...")
     if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
         if graph.fwd_from:
             return
@@ -45,7 +45,7 @@ async def telegraphs(graph):
                     if downloaded_file_name.endswith((".webp")):
                         resize_image(downloaded_file_name)
                 except AttributeError:
-                    return await graph.edit("`No media provided`")
+                    return await graph.edit("No media provided")
                 try:
                     media_urls = upload_file(downloaded_file_name)
                 except exceptions.TelegraphException as exc:
@@ -54,7 +54,7 @@ async def telegraphs(graph):
                 else:
                     os.remove(downloaded_file_name)
                     await graph.edit(
-                        "Successfully Uploaded to [telegra.ph](https://telegra.ph{}).".format(
+                        "[Telegraph Link](https://telegra.ph{}).".format(
                             media_urls[0]
                         ),
                         link_preview=True,
@@ -81,13 +81,13 @@ async def telegraphs(graph):
                     title_of_page, html_content=page_content
                 )
                 await graph.edit(
-                    "Successfully uploaded to [telegra.ph](https://telegra.ph/{}).".format(
+                    "[Telegraph Link](https://telegra.ph/{}).".format(
                         response["path"]
                     ),
                     link_preview=True,
                 )
         else:
-            await graph.edit("`Reply to a message to get a permanent telegra.ph link.`")
+            await graph.edit("Reply to a message to get a permanent telegra.ph link.")
 
 
 def resize_image(image):
@@ -95,9 +95,9 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CMD_HELP.update(
-    {
-        "telegraph": ".tg <m|t>\
-        \nUsage: Upload t(text) or m(media) on Telegraph."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "telegraph": ".tg <m|t>\
+#        \nUsage: Upload t(text) or m(media) on Telegraph."
+#    }
+#)
