@@ -20,7 +20,7 @@ today = date.today()
 # ====================
 
 
-@register(outgoing=True, pattern=r"^\.compress(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xcompress(?: |$)(.*)")
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
@@ -70,7 +70,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.addzip(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xaddzip(?: |$)(.*)")
 async def addzip(add):
     """ Copyright (c) 2020 azrim @github"""
     # Prevent Channel Bug to use update
@@ -103,7 +103,7 @@ async def addzip(add):
             return
 
 
-@register(outgoing=True, pattern=r"^\.upzip(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xupzip(?: |$)(.*)")
 async def upload_zip(up):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         await up.edit("`Files not found`")
@@ -130,7 +130,7 @@ async def upload_zip(up):
     await up.delete()
 
 
-@register(outgoing=True, pattern=r"^\.rmzip(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xrmzip(?: |$)(.*)")
 async def remove_dir(rm):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         await rm.edit("`Directory not found`")
@@ -147,15 +147,15 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CMD_HELP.update(
-    {
-        "zipfile": ".compress **[optional: <reply to file>]**\
-            \nUsage: make files to zip.\
-            \n.addzip **<reply to file>**\
-            \nUsage: add files to zip list.\
-            \n.upzip **[optional: <zip title>]**\
-            \nUsage: upload zip list.\
-            \n.rmzip **[optional: <zip title>]**\
-            \nUsage: clear zip list."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "zipfile": ".compress **[optional: <reply to file>]**\
+#            \nUsage: make files to zip.\
+#            \n.addzip **<reply to file>**\
+#            \nUsage: add files to zip list.\
+#            \n.upzip **[optional: <zip title>]**\
+#            \nUsage: upload zip list.\
+#            \n.rmzip **[optional: <zip title>]**\
+#            \nUsage: clear zip list."
+#    }
+#)
