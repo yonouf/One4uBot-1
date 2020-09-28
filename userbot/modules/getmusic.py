@@ -228,20 +228,21 @@ async def _(event):
 CMD_HELP.update(
     {
         "music": 
-        ".songn <Artist - Song Title>"
+        "⊙ .songn <Artist - Song Title>"
         "\nUsage: Download music by name (@WooMaiBot)"
-        "\n\n.songl <Spotify/Deezer Link>"
+        "\n\n⊙ .songl <Spotify/Deezer Link>"
         "\nUsage: Download music by link (@MusicHuntersBot)"
-        "\n\n.songf <Artist - Song Title>"
+        "\n\n⊙ .songf <Artist - Song Title>"
         "\nUsage: Download music by name (@SpotifyMusicDownloaderBot)"
-        "\n\n.songn now"
+        "\n\n⊙ .songn now"
         "\nUsage: Download current LastFM scrobble with @WooMaiBot"
-        "\n\n.songf now"
+        "\n\n⊙ .songf now"
         "\nUsage: Download current LastFM scrobble with @SpotifyMusicDownloaderBot"
-        "\n\n.vsong <Artist - Song Title>"
+        "\n\n⊙ .vsong <Artist - Song Title>"
         "\nUsage: Finding and uploading videoclip.\n"
-        "\n\n.deez <spotify/deezer link> <Format>"
+        "\n\n⊙ .deez <spotify/deezer link> <Format>"
         "\nUsage: Download music from deezer."
         "\n\n*Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
+        "\n\n⊙ .rip<au|vi> Rip Audio Video ⊙
     }
 )
