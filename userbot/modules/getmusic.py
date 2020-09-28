@@ -225,24 +225,17 @@ async def _(event):
     os.system("rm -rf *.webm")
 
 
-CMD_HELP.update(
-    {
-        "music": 
-        "⊙ .songn <Artist - Song Title>"
-        "\nUsage: Download music by name (@WooMaiBot)"
-        "\n\n⊙ .songl <Spotify/Deezer Link>"
-        "\nUsage: Download music by link (@MusicHuntersBot)"
-        "\n\n⊙ .songf <Artist - Song Title>"
-        "\nUsage: Download music by name (@SpotifyMusicDownloaderBot)"
-        "\n\n⊙ .songn now"
-        "\nUsage: Download current LastFM scrobble with @WooMaiBot"
-        "\n\n⊙ .songf now"
-        "\nUsage: Download current LastFM scrobble with @SpotifyMusicDownloaderBot"
-        "\n\n⊙ .vsong <Artist - Song Title>"
-        "\nUsage: Finding and uploading videoclip.\n"
-        "\n\n⊙ .deez <spotify/deezer link> <Format>"
-        "\nUsage: Download music from deezer."
-        "\n\n*Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
-        "\n\n⊙ .rip<au|vi> Rip Audio Video ⊙"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "music": 
+#        "⊙ .songn <Artist - Song Title> @WooMaiBot Download ⊙"
+#        "\n⊙ .songl <Spotify/Deezer Link> @MusicHuntersBot Download ⊙"
+#        "\n⊙ .songf <Artist - Song Title> @SpotifyMusicDownloaderBot Download"
+#        "\n⊙ .songn now @WooMaiBot Download ⊙"
+#        "\n⊙ .songf now @SpotifyMusicDownloaderBot Download ⊙"
+#        "\n⊙ .vsong <Artist - Song Title> Find & Upload ⊙"
+#        "\n⊙ .deez <spotify/deezer link> <Format> ⊙"
+#        "\nFormat= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`⊙"
+#        "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
+#    }
+#)
