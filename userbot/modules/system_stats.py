@@ -233,13 +233,13 @@ async def amireallyalive(alive):
     output = (
         "⊙ One4uBot on . . . . . ⊙\n"
         "\n"
-        f"⊙ •  Telethon        : v{version.__version__}\n"
-        f"⊙ •  Python          : v{python_version()}\n"
-        f"⊙ •  User            : {DEFAULTUSER}\n"
-        f"⊙ •  Running on      : {repo.active_branch.name}\n"
-        f"⊙ •  Modules         : {len(modules)}\n"
-        f"⊙ •  One4uBot        : v{USERBOT_VERSION}\n"
-        f"⊙ •  Uptime          : {uptime}\n"
+        f"⊙ • Telethon        : Ver.{version.__version__}\n"
+        f"⊙ • Python           : Ver.{python_version()}\n"
+        f"⊙ • User               : {DEFAULTUSER}\n"
+        f"⊙ • Running on      : {repo.active_branch.name} Branch\n"
+        f"⊙ • Modules           : {len(modules)} Modules\n"
+        f"⊙ • One4uBot        : Ver.{USERBOT_VERSION}\n"
+        f"⊙ • Uptime             : {uptime}\n"
     )
     if ALIVE_LOGO:
         try:
