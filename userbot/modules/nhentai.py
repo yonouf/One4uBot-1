@@ -11,7 +11,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.nhentai(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xnhentai(?: |$)(.*)")
 async def _(hentai):
     if hentai.fwd_from:
         return
@@ -42,9 +42,9 @@ async def _(hentai):
             await hentai.client.delete_messages(conv.chat_id, [msg.id, response.id])
 
 
-CMD_HELP.update(
-    {
-        "nhentai": ".nhentai <link / code> \
-        \nUsage: view nhentai in telegra.ph\n"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "nhentai": ".nhentai <link / code> \
+#        \nUsage: view nhentai in telegra.ph\n"
+#    }
+#)
