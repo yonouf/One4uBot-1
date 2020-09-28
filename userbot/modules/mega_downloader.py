@@ -38,7 +38,7 @@ async def subprocess_run(megadl, cmd):
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
 
-@register(outgoing=True, pattern=r"^.mega(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.xmega(?: |$)(.*)")
 async def mega_downloader(megadl):
     await megadl.edit("`Collecting information...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -169,10 +169,10 @@ async def decrypt_file(megadl, file_path, temp_file_path, hex_key, hex_raw_key):
     return
 
 
-CMD_HELP.update(
-    {
-        "mega": ".mega <MEGA.nz link>"
-        "\nUsage: Reply to a MEGA.nz link or paste your MEGA.nz link to "
-        "download the file into your userbot server."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "mega": ".mega <MEGA.nz link>"
+#        "\nUsage: Reply to a MEGA.nz link or paste your MEGA.nz link to "
+#        "download the file into your userbot server."
+#    }
+#)
