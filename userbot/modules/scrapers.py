@@ -686,10 +686,10 @@ async def wolfram(wvent):
 
 
 CMD_HELP.update({
-            "Misc": 
+            "miscs": 
             "⊙ .img Image ⊙ .g Google ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙ "
             ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg Telegraph ⊙ .ss ScreenShot "
-            "⊙ .ly BitLy ⊙ .ty Type ⊙ .str Stretch ⊙ .ka Stickers ⊙ .q Quotly \n"
+            "⊙ .ly BitLy ⊙ .ty Type ⊙ .str Stretch ⊙ .ka Stickers ⊙ .q Quotly. \n"
             "⊙ .fig Figlet Styles : `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`"
     }
 )
