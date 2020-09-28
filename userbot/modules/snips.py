@@ -34,7 +34,7 @@ async def on_snip(event):
         )
 
 
-@register(outgoing=True, pattern=r"^.snip (\w*)")
+@register(outgoing=True, pattern=r"^.xsnip (\w*)")
 async def on_snip_save(event):
     """ For .snip command, saves snips for future use. """
     try:
@@ -73,7 +73,7 @@ async def on_snip_save(event):
         await event.edit(success.format("saved", keyword))
 
 
-@register(outgoing=True, pattern="^.snips$")
+@register(outgoing=True, pattern="^.xsnips$")
 async def on_snip_list(event):
     """ For .snips command, lists snips saved by you. """
     try:
@@ -94,7 +94,7 @@ async def on_snip_list(event):
     await event.edit(message)
 
 
-@register(outgoing=True, pattern=r"^.remsnip (\w*)")
+@register(outgoing=True, pattern=r"^.xremsnip (\w*)")
 async def on_snip_delete(event):
     """ For .remsnip command, deletes a snip. """
     try:
@@ -109,17 +109,17 @@ async def on_snip_delete(event):
         await event.edit(f"`Couldn't find snip:` **{name}**")
 
 
-CMD_HELP.update(
-    {
-        "snips": "\
-$<snip_name>\
-\nUsage: Gets the specified snip, anywhere.\
-\n\n.snip <name> <data> or reply to a message with .snip <name>\
-\nUsage: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
-\n\n.snips\
-\nUsage: Gets all saved snips.\
-\n\n.remsnip <snip_name>\
-\nUsage: Deletes the specified snip.\
-"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "snips": "\
+#$<snip_name>\
+#\nUsage: Gets the specified snip, anywhere.\
+#\n\n.snip <name> <data> or reply to a message with .snip <name>\
+#\nUsage: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
+#\n\n.snips\
+#\nUsage: Gets all saved snips.\
+#\n\n.remsnip <snip_name>\
+#\nUsage: Deletes the specified snip.\
+#"
+#    }
+#)
