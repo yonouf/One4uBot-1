@@ -242,9 +242,7 @@ async def check_progress_for_dl(gid, event, previous):
 CMD_HELP.update(
     {
         "download": 
-        "⊙ .amag Magnet ⊙ .ator Torrent ⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ .ashow Show ⊙"
+        ".apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ .ashow Show ⊙"
         " .down Download ⊙ .upl Upload ⊙"
-        " .dir Direct Support GD - Cloud Mail - Yandex - AFH - Zippy - MediaFire - SF - OSDN - GitHub ⊙\n"
-        "Usage: Reply to link or paste URL."
     }
 )
