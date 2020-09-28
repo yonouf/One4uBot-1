@@ -18,11 +18,11 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 
-@register(pattern=".whois(?: |$)(.*)", outgoing=True)
+@register(pattern=".who(?: |$)(.*)", outgoing=True)
 async def who(event):
 
     await event.edit(
-        "`Sit tight while I steal some data from *Global Network Zone*...`"
+        "Stealing data from 𝐅𝐁𝐈 database..."
     )
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -33,7 +33,7 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        event.edit("`Could not fetch info of that user.`")
+        event.edit("That user is Retarted")
         return
 
     message_id_to_reply = event.message.reply_to_msg_id
@@ -134,27 +134,27 @@ async def fetch_info(replied_user, event):
     username = "@{}".format(username) if username else ("This User has no Username")
     user_bio = "This User has no About" if not user_bio else user_bio
 
-    caption = "<b>USER INFO:</b>\n\n"
-    caption += f"First Name: {first_name}\n"
-    caption += f"Last Name: {last_name}\n"
-    caption += f"Username: {username}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
-    caption += f"Number of Profile Pics: {replied_user_profile_photos_count}\n"
-    caption += f"Is Bot: {is_bot}\n"
-    caption += f"Is Restricted: {restricted}\n"
-    caption += f"Is Verified by Telegram: {verified}\n"
-    caption += f"ID: <code>{user_id}</code>\n\n"
-    caption += f"Bio: \n<code>{user_bio}</code>\n\n"
-    caption += f"Common Chats with this user: {common_chat}\n"
-    caption += f"Permanent Link To Profile: "
-    caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
+    caption = "\n⊙ <b>USER INFO </b>⊙\n"
+    caption += f"⊙ First Name : {first_name}\n"
+    caption += f"⊙ Last Name : {last_name}\n"
+    caption += f"⊙ Username : {username}\n"
+    caption += f"⊙ Data Centre ID : {dc_id}\n"
+    caption += f"⊙ ID : <code>{user_id}</code>\n"
+    caption += f"⊙ Profile Pics : {replied_user_profile_photos_count} Pics\n\n"
+    caption += f"⊙ Is Bot : {is_bot}\n"
+    caption += f"⊙ Is Restricted : {restricted}\n"
+    caption += f"⊙ Is Verified by Telegram : {verified}\n"
+    caption += f"⊙ Bio : \n<code>{user_bio}</code>\n\n"
+    caption += f"⊙ Common Chats : {common_chat}\n"
+    caption += f"⊙ Permanent Link : "
+    caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
 
     return photo, caption
 
 
-CMD_HELP.update(
-    {
-        "whois": ".whois <username> or reply to someones text with .whois\
-    \nUsage: Gets info of an user."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "whois": ".whois <username> or reply to someones text with .whois\
+#    \nUsage: Gets info of an user."
+#    }
+#)
