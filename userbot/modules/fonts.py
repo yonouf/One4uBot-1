@@ -121,7 +121,7 @@ oldengfont = [
 ]
 
 
-@register(outgoing=True, pattern="^.weebify(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xweebify(?: |$)(.*)")
 async def weebify(event):
 
     args = event.pattern_match.group(1)
@@ -139,7 +139,7 @@ async def weebify(event):
     await event.edit(string)
 
 
-@register(outgoing=True, pattern="^.circlify(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xcirclify(?: |$)(.*)")
 async def circly(event):
 
     args = event.pattern_match.group(1)
@@ -157,7 +157,7 @@ async def circly(event):
     await event.edit(string)
 
 
-@register(outgoing=True, pattern="^.oldeng(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xoldeng(?: |$)(.*)")
 async def oldy(event):
 
     args = event.pattern_match.group(1)
@@ -175,10 +175,10 @@ async def oldy(event):
     await event.edit(string)
 
 
-CMD_HELP.update(
-    {
-        "fonts": ".weebify :- weebifys your text \
-\n.circlify :- circlifies text \
-\n.oldeng :- old eng font"
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "fonts": ".weebify :- weebifys your text \
+#\n.circlify :- circlifies text \
+#\n.oldeng :- old eng font"
+#    }
+#)
