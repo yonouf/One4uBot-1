@@ -245,7 +245,7 @@ CMD_HELP.update(
         "⊙ ∂σωηℓσα∂ ⊙\n⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ "
         "\n⊙ .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙" 
         "\n⊙ .songn <artist - title> @WooMaiBot ⊙"
-        "\n⊙ .songl <spotify|deezer Link> @MusicHuntersBot ⊙"
+        "\n⊙ .songl <spotify|deezer Link> @MusicsHunterBot ⊙"
         "\n⊙ .songf <artist - title> @SpotifyMusicDownloaderBot ⊙"
         "\n⊙ .songn now @WooMaiBot ⊙"
         "\n⊙ .songf now @SpotifyMusicDownloaderBot ⊙"
