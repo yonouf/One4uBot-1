@@ -65,11 +65,11 @@ async def time_func(tdata):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await tdata.edit(f"`It's`  **{dt.now().strftime(t_form)}**  `here.`")
+        await tdata.edit(f"It's  **{dt.now().strftime(t_form)}**.")
         return
 
     if not timezones:
-        await tdata.edit("`Invaild country.`")
+        await tdata.edit("Invaild country.")
         return
 
     if len(timezones) == 1:
@@ -79,14 +79,14 @@ async def time_func(tdata):
             tz_num = int(tz_num)
             time_zone = timezones[tz_num - 1]
         else:
-            return_str = f"`{c_name} has multiple timezones:`\n\n"
+            return_str = f"{c_name} has multiple timezones:\n\n"
 
             for i, item in enumerate(timezones):
-                return_str += f"`{i+1}. {item}`\n"
+                return_str += f"{i+1}. {item}\n"
 
-            return_str += "\n`Choose one by typing the number "
-            return_str += "in the command.`\n"
-            return_str += f"`Example: .time {c_name} 2`"
+            return_str += "\nChoose one by typing the number "
+            return_str += "in the command.\n"
+            return_str += f"Example: .time {c_name} 2"
 
             await tdata.edit(return_str)
             return
@@ -94,12 +94,12 @@ async def time_func(tdata):
     dtnow = dt.now(tz(time_zone)).strftime(t_form)
 
     if c_name != COUNTRY:
-        await tdata.edit(f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+        await tdata.edit(f"It's **{dtnow}** in {c_name}({time_zone} timezone).")
         return
 
     elif COUNTRY:
         await tdata.edit(
-            f"`It's`  **{dtnow}**  `here, in {COUNTRY}" f"({time_zone} timezone).`"
+            f"It's **{dtnow}** in {COUNTRY}" f"({time_zone} timezone)."
         )
         return
 
@@ -128,11 +128,11 @@ async def date_func(dat):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await dat.edit(f"`It's`  **{dt.now().strftime(d_form)}**  `here.`")
+        await dat.edit(f"It's  **{dt.now().strftime(d_form)}**.")
         return
 
     if not timezones:
-        await dat.edit("`Invaild country.`")
+        await dat.edit("Invaild country.")
         return
 
     if len(timezones) == 1:
@@ -142,13 +142,13 @@ async def date_func(dat):
             tz_num = int(tz_num)
             time_zone = timezones[tz_num - 1]
         else:
-            return_str = f"`{c_name} has multiple timezones:`\n"
+            return_str = f"{c_name} has multiple timezones:\n"
 
             for i, item in enumerate(timezones):
-                return_str += f"`{i+1}. {item}`\n"
+                return_str += f"{i+1}. {item}\n"
 
-            return_str += "\n`Choose one by typing the number "
-            return_str += "in the command.`\n"
+            return_str += "\nChoose one by typing the number "
+            return_str += "in the command.\n"
             return_str += f"Example: .date {c_name} 2"
 
             await dat.edit(return_str)
@@ -157,29 +157,29 @@ async def date_func(dat):
     dtnow = dt.now(tz(time_zone)).strftime(d_form)
 
     if c_name != COUNTRY:
-        await dat.edit(f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+        await dat.edit(f"It's **{dtnow}** in {c_name}({time_zone} timezone).")
         return
 
     elif COUNTRY:
         await dat.edit(
-            f"`It's`  **{dtnow}**  `here, in {COUNTRY}" f"({time_zone} timezone).`"
+            f"It's **{dtnow}** in {COUNTRY}" f"({time_zone} timezone)."
         )
         return
 
 
-CMD_HELP.update(
-    {
-        "time": ".time <country name/code> <timezone number>"
-        "\nUsage: Get the time of a country. If a country has "
-        "multiple timezones, it will list all of them "
-        "and let you select one."
-    }
-)
-CMD_HELP.update(
-    {
-        "date": ".date <country name/code> <timezone number>"
-        "\nUsage: Get the date of a country. If a country has "
-        "multiple timezones, it will list all of them "
-        "and let you select one."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "time": ".time <country name/code> <timezone number>"
+#        "\nUsage: Get the time of a country. If a country has "
+#        "multiple timezones, it will list all of them "
+#        "and let you select one."
+#    }
+#)
+#CMD_HELP.update(
+#    {
+#        "date": ".date <country name/code> <timezone number>"
+#        "\nUsage: Get the date of a country. If a country has "
+#        "multiple timezones, it will list all of them "
+#        "and let you select one."
+#    }
+#)
