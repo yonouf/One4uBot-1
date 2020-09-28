@@ -242,7 +242,16 @@ async def check_progress_for_dl(gid, event, previous):
 CMD_HELP.update(
     {
         "download": 
-        ".apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ .ashow Show ⊙"
-        " .down Download ⊙ .upl Upload ⊙"
+        "⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ "
+        "\n⊙ .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙" 
+        "\n⊙ .songn <Artist - Song Title> @WooMaiBot Download ⊙"
+        "\n⊙ .songl <Spotify/Deezer Link> @MusicHuntersBot Download ⊙"
+        "\n⊙ .songf <Artist - Song Title> @SpotifyMusicDownloaderBot Download"
+        "\n⊙ .songn now @WooMaiBot Download ⊙"
+        "\n⊙ .songf now @SpotifyMusicDownloaderBot Download ⊙"
+        "\n⊙ .vsong <Artist - Song Title> Find & Upload ⊙"
+        "\n⊙ .deez <spotify/deezer link> <Format> ⊙"
+        "\nFormat= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`⊙"
+        "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
     }
 )
