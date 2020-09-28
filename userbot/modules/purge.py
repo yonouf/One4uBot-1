@@ -93,7 +93,7 @@ async def delete_it(delme):
                 )
 
 
-@register(outgoing=True, pattern="^.ed)
+@register(outgoing=True, pattern="^.ed")
 async def editer(edit):
     """ For .editme command, edit your last message. """
     message = edit.text
