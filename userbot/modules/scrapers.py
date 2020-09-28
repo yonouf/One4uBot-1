@@ -50,14 +50,14 @@ TTS_LANG = "en"
 TRT_LANG = "en"
 
 
-@register(outgoing=True, pattern="^.crblang (.*)")
+@register(outgoing=True, pattern="^.xcrblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
 
-@register(outgoing=True, pattern="^.carbon")
+@register(outgoing=True, pattern="^.xcarbon")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -115,7 +115,7 @@ async def carbon_api(e):
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("`Processing...`")
+    await event.edit("Processing...")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -139,7 +139,7 @@ async def img_sampler(event):
     try:
         paths = response.download(arguments)
     except Exception as e:
-        return await event.edit(f"`Error: {e}`")
+        return await event.edit(f"Error: {e}")
 
     lst = paths[0][query]
     await event.client.send_file(
@@ -149,7 +149,7 @@ async def img_sampler(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.currency (.*)")
+@register(outgoing=True, pattern="^.xcurrency (.*)")
 async def moni(event):
     input_str = event.pattern_match.group(1)
     input_sgra = input_str.split(" ")
@@ -179,7 +179,7 @@ async def moni(event):
         return
 
 
-@register(outgoing=True, pattern=r"^.google (.*)")
+@register(outgoing=True, pattern=r"^.g (.*)")
 async def gsearch(q_event):
     """ For .google command, do a Google search. """
     match = q_event.pattern_match.group(1)
@@ -203,17 +203,17 @@ async def gsearch(q_event):
         except IndexError:
             break
     await q_event.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+        "**Search Query:**\n" + match + "\n\n**Results:**\n" + msg, link_preview=False
     )
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
+            "Google Search query " + match + " was executed successfully",
         )
 
 
-@register(outgoing=True, pattern=r"^.wiki (.*)")
+@register(outgoing=True, pattern=r"^.xwiki (.*)")
 async def wiki(wiki_q):
     """ For .wiki command, fetch content from Wikipedia. """
     match = wiki_q.pattern_match.group(1)
@@ -254,7 +254,7 @@ async def urban_dict(ud_e):
     try:
         define(query)
     except HTTPError:
-        await ud_e.edit(f"Sorry, couldn't find any results for: {query}")
+        await ud_e.edit(f"Sorry, couldn't find {query}")
         return
     mean = define(query)
     deflen = sum(len(i) for i in mean[0]["def"])
@@ -262,7 +262,7 @@ async def urban_dict(ud_e):
     meanlen = deflen + exalen
     if int(meanlen) >= 0:
         if int(meanlen) >= 4096:
-            await ud_e.edit("`Output too large, sending as file.`")
+            await ud_e.edit("Output too large, sending as file.")
             file = open("output.txt", "w+")
             file.write(
                 "Text: "
@@ -277,7 +277,7 @@ async def urban_dict(ud_e):
             await ud_e.client.send_file(
                 ud_e.chat_id,
                 "output.txt",
-                caption="`Output was too large, sent it as a file.`",
+                caption="Output was too large, sent it as a file.",
             )
             if os.path.exists("output.txt"):
                 os.remove("output.txt")
@@ -295,13 +295,13 @@ async def urban_dict(ud_e):
         )
         if BOTLOG:
             await ud_e.client.send_message(
-                BOTLOG_CHATID, "ud query `" + query + "` executed successfully."
+                BOTLOG_CHATID, "ud query " + query + " executed successfully."
             )
     else:
         await ud_e.edit("No result found for **" + query + "**")
 
 
-@register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.tt(?: |$)([\s\S]*)")
 async def text_to_speech(query):
     """ For .tts command, a wrapper for Google Text-to-Speech. """
     textx = await query.get_reply_message()
@@ -311,7 +311,7 @@ async def text_to_speech(query):
     elif textx:
         message = textx.text
     else:
-        await query.edit("`Give a text or reply to a message for Text-to-Speech!`")
+        await query.edit("Give a text or reply")
         return
 
     try:
@@ -323,10 +323,10 @@ async def text_to_speech(query):
         )
         return
     except ValueError:
-        await query.edit("Language is not supported.")
+        await query.edit("NOT supported.")
         return
     except RuntimeError:
-        await query.edit("Error loading the languages dictionary.")
+        await query.edit("ERROR Loading...")
         return
     tts = gTTS(message, lang=TTS_LANG)
     tts.save("k.mp3")
@@ -341,7 +341,7 @@ async def text_to_speech(query):
         os.remove("k.mp3")
         if BOTLOG:
             await query.client.send_message(
-                BOTLOG_CHATID, "Text to Speech executed successfully !"
+                BOTLOG_CHATID, "TTS Done."
             )
         await query.delete()
 
@@ -442,7 +442,7 @@ async def imdb(e):
         await e.edit("Plox enter **Valid movie name** kthx")
 
 
-@register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.tr(?: |$)([\s\S]*)")
 async def translateme(trans):
     """ For .trt command, translate the given text using Google Translate. """
     translator = Translator()
@@ -453,7 +453,7 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        await trans.edit("`Give a text or reply to a message to translate!`")
+        await trans.edit("Give a text or reply.")
         return
 
     try:
@@ -474,7 +474,7 @@ async def translateme(trans):
         )
 
 
-@register(pattern=".lang (trt|tts) (.*)", outgoing=True)
+@register(pattern=".la (tr|tt) (.*)", outgoing=True)
 async def lang(value):
     """ For .lang command, change the default langauge of userbot scrapers. """
     util = value.pattern_match.group(1).lower()
@@ -523,17 +523,17 @@ async def yt_search(video_q):
 
     query = video_q.pattern_match.group(2)
     if not query:
-        await video_q.edit("`Enter query to search`")
-    await video_q.edit("`Processing...`")
+        await video_q.edit("Enter query to search")
+    await video_q.edit("Loading...")
 
     try:
         results = json.loads(YoutubeSearch(query, max_results=counter).to_json())
     except KeyError:
         return await video_q.edit(
-            "`Youtube Search gone retard.\nCan't search this query!`"
+            "Youtube Search gone retard.\nCan't search this query!"
         )
 
-    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n"
+    output = f"**Search Query:**\n{query}\n\n**Results:**\n\n"
 
     for i in results["videos"]:
         try:
@@ -542,22 +542,22 @@ async def yt_search(video_q):
             channel = i["channel"]
             duration = i["duration"]
             views = i["views"]
-            output += f"[{title}]({link})\nChannel: `{channel}`\nDuration: {duration} | {views}\n\n"
+            output += f"[{title}]({link})\nChannel: {channel}\nDuration: {duration} | {views}\n\n"
         except IndexError:
             break
 
     await video_q.edit(output, link_preview=False)
 
 
-@register(outgoing=True, pattern=r".rip(audio|video) (.*)")
+@register(outgoing=True, pattern=r".rip(au|vi) (.*)")
 async def download_video(v_url):
     """ For .rip command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`Preparing to download...`")
+    await v_url.edit("Preparing Download...")
 
-    if type == "audio":
+    if type == "au":
         opts = {
             "format": "bestaudio",
             "addmetadata": True,
@@ -580,7 +580,7 @@ async def download_video(v_url):
         video = False
         song = True
 
-    elif type == "video":
+    elif type == "vi":
         opts = {
             "format": "best",
             "addmetadata": True,
@@ -599,33 +599,33 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Fetching data, please wait..`")
+        await v_url.edit("Fetching data, please wait..")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         return await v_url.edit(f"`{str(DE)}`")
     except ContentTooShortError:
-        return await v_url.edit("`The download content was too short.`")
+        return await v_url.edit("The download content was too short.")
     except GeoRestrictedError:
         return await v_url.edit(
-            "`Video is not available from your geographic location "
-            "due to geographic restrictions imposed by a website.`"
+            "Video is not available from your geographic location "
+            "due to geographic restrictions imposed by a website."
         )
     except MaxDownloadsReached:
-        return await v_url.edit("`Max-downloads limit has been reached.`")
+        return await v_url.edit("Max-downloads limit has been reached.")
     except PostProcessingError:
-        return await v_url.edit("`There was an error during post processing.`")
+        return await v_url.edit("There was an error during post processing.")
     except UnavailableVideoError:
-        return await v_url.edit("`Media is not available in the requested format.`")
+        return await v_url.edit("Media is not available in the requested format.")
     except XAttrMetadataError as XAME:
-        return await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        return await v_url.edit(f"{XAME.code}: {XAME.msg}\n{XAME.reason}")
     except ExtractorError:
-        return await v_url.edit("`There was an error during info extraction.`")
+        return await v_url.edit("There was an error during info extraction.")
     except Exception as e:
         return await v_url.edit(f"{str(type(e)): {str(e)}}")
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Preparing to upload song:`\n**{rip_data['title']}**")
+        await v_url.edit(f"Preparing to upload song:\n**{rip_data['title']}**")
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp3",
@@ -663,7 +663,7 @@ def deEmojify(inputString):
     return get_emoji_regexp().sub("", inputString)
 
 
-@register(outgoing=True, pattern=r"^.wolfram (.*)")
+@register(outgoing=True, pattern=r"^.xwolfram (.*)")
 async def wolfram(wvent):
     """ Wolfram Alpha API """
     if WOLFRAM_ID is None:
@@ -685,71 +685,9 @@ async def wolfram(wvent):
         )
 
 
-CMD_HELP.update(
-    {
-        "img": ".img <search_query>\
-        \nUsage: Does an image search on Google and shows 5 images."
-    }
-)
-CMD_HELP.update(
-    {
-        "currency": ".currency <amount> <from> <to>\
-        \nUsage: Converts various currencies for you."
-    }
-)
-CMD_HELP.update(
-    {
-        "carbon": ".carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code."
-    }
-)
-CMD_HELP.update(
-    {
-        "google": ".google <query>\
-        \nUsage: Does a search on Google."
-    }
-)
-CMD_HELP.update(
-    {
-        "wiki": ".wiki <query>\
-        \nUsage: Does a search on Wikipedia."
-    }
-)
-CMD_HELP.update(
-    {
-        "ud": ".ud <query>\
-        \nUsage: Does a search on Urban Dictionary."
-    }
-)
-CMD_HELP.update(
-    {
-        "tts": ".tts <text> [or reply]\
-        \nUsage: Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)"
-    }
-)
-CMD_HELP.update(
-    {
-        "trt": ".trt <text> [or reply]\
-        \nUsage: Translates text to the language which is set.\nUse .lang trt <language code> to set language for trt. (Default is English)"
-    }
-)
-CMD_HELP.update(
-    {
-        "yt": ".yt <count> <query>"
-        "\nUsage: Does a YouTube search."
-        "\nCan specify the number of results needed (default is 5)."
-    }
-)
-CMD_HELP.update({"imdb": ".imdb <movie-name>\nShows movie info and other stuff."})
-CMD_HELP.update(
-    {
-        "rip": ".ripaudio <url> or ripvideo <url>\
-        \nUsage: Download videos and songs from YouTube (and [many other sites](https://ytdl-org.github.io/youtube-dl/supportedsites.html))."
-    }
-)
-CMD_HELP.update(
-    {
-        "wolfram": ".wolfram <query>\
-        \nUsage: Get answers to questions using WolframAlpha Spoken Results API."
+CMD_HELP.update({
+            "Misc": 
+            "⊙ .img Image ⊙ .rip<au|vi> Rip Audio Video ⊙ .g Google ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙ "
+            ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg Telegraph ⊙ .ss ScreenShot "
     }
 )
