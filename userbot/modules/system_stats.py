@@ -58,7 +58,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern=r"^\.spc")
+@register(outgoing=True, pattern=r"^\.xspc")
 async def psu(event):
     uname = platform.uname()
     softw = "**System Information**\n"
@@ -120,7 +120,7 @@ def get_size(bytes, suffix="B"):
         bytes /= factor
 
 
-@register(outgoing=True, pattern=r"^\.sysd$")
+@register(outgoing=True, pattern=r"^\.xsysd$")
 async def sysdetails(sysd):
     """ For .sysd command, get system info using neofetch. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
@@ -140,7 +140,7 @@ async def sysdetails(sysd):
             await sysd.edit("`Install neofetch first !!`")
 
 
-@register(outgoing=True, pattern="^.botver$")
+@register(outgoing=True, pattern="^.bv$")
 async def bot_ver(event):
     """ For .botver command, get the bot version. """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -167,16 +167,18 @@ async def bot_ver(event):
             stdout, stderr = await rev.communicate()
             revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
-            await event.edit(
-                "`Userbot Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
-            )
+            await event.edit("⊙ Version  : "
+                             f"{verout}"
+                             "\n⊙ Revision : "
+                             f"{revout}"
+                             f"\n⊙ Loaded by : ⊙ {DEFAULTUSER} ⊙")
         else:
             await event.edit(
-                "Shame that you don't have git, you're running - 'v2.5' anyway!"
+                "Shame, you don't have a Brain."
             )
 
 
-@register(outgoing=True, pattern="^.pip(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xpip(?: |$)(.*)")
 async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     if not pip.text[0].isalpha() and pip.text[0] not in ("/", "#", "@", "!"):
@@ -221,25 +223,25 @@ async def pipcheck(pip):
                     "`\n**Result: **\n`No Result Returned/False`"
                 )
         else:
-            await pip.edit("`Use .help pip to see an example`")
+            await pip.edit("`Use .h pip to see an example`")
 
 
-@register(outgoing=True, pattern=r"^.(alive|on)$")
+@register(outgoing=True, pattern=r"^.on$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        "`Bot services is running...`\n"
-        "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶`\n"
-        f"•  ⚙️ `Telethon       : v{version.__version__} `\n"
-        f"•  🐍 `Python         : v{python_version()} `\n"
-        f"•  👤 `User           :`  {DEFAULTUSER} \n"
-        "`----------------------------------`\n"
-        f"•  💻 `Running on     : {repo.active_branch.name} `\n"
-        f"•  🗃 `Loaded modules : {len(modules)} `\n"
-        f"•  🧸 `One4uBot       : v{USERBOT_VERSION} `\n"
-        f"•  🕒 `Bot Uptime     : {uptime} `\n"
-        "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶`"
+        "⊙ I'm Alive...!!! ⊙\n"
+        "⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙\n"
+        f"• ⊙  ⚙️ Telethon       : v{version.__version__} ⊙\n"
+        f"• ⊙  🐍 Python         : v{python_version()} ⊙\n"
+        f"• ⊙  👤 User           :  {DEFAULTUSER} ⊙\n"
+        "⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙\n"
+        f"• ⊙  💻 Running on     : {repo.active_branch.name} ⊙\n"
+        f"• ⊙  🗃 Loaded modules : {len(modules)} ⊙\n"
+        f"• ⊙  🧸 One4uBot       : v{USERBOT_VERSION} ⊙\n"
+        f"• ⊙  🕒 Bot Uptime     : {uptime} ⊙\n"
+        "⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙ ⊙"
     )
     if ALIVE_LOGO:
         try:
@@ -248,14 +250,14 @@ async def amireallyalive(alive):
             await alive.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`The provided logo is invalid."
-                "\nMake sure the link is directed to the logo picture`"
+                output + "\n\n *The provided logo is invalid."
+                "\nMake sure the link is directed to the logo picture"
             )
     else:
         await alive.edit(output)
 
 
-@register(outgoing=True, pattern="^.aliveu")
+@register(outgoing=True, pattern="^.xaliveu")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
@@ -276,33 +278,33 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
-CMD_HELP.update(
-    {
-        "sysd": ".sysd\
-    \nUsage: Shows system information using neofetch.\
-    \n\n.spc\
-    \nUsage: Show system specification."
-    }
-)
-CMD_HELP.update(
-    {
-        "botver": ".botver\
-    \nUsage: Shows the userbot version."
-    }
-)
-CMD_HELP.update(
-    {
-        "pip": ".pip <module(s)>\
-    \nUsage: Does a search of pip modules(s)."
-    }
-)
-CMD_HELP.update(
-    {
-        "alive": ".alive | .on\
-    \nUsage: Type .alive/.on to see wether your bot is working or not.\
-    \n\n.aliveu <text>\
-    \nUsage: Changes the 'user' in alive to the text you want.\
-    \n\n.resetalive\
-    \nUsage: Resets the user to default."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "sysd": ".sysd\
+#    \nUsage: Shows system information using neofetch.\
+#    \n\n.spc\
+#    \nUsage: Show system specification."
+#    }
+#)
+#CMD_HELP.update(
+#    {
+#        "botver": ".botver\
+#    \nUsage: Shows the userbot version."
+#    }
+#)
+#CMD_HELP.update(
+#    {
+#        "pip": ".pip <module(s)>\
+#    \nUsage: Does a search of pip modules(s)."
+#    }
+#)
+#CMD_HELP.update(
+#    {
+#        "alive": ".alive | .on\
+#    \nUsage: Type .alive/.on to see wether your bot is working or not.\
+#    \n\n.aliveu <text>\
+#    \nUsage: Changes the 'user' in alive to the text you want.\
+#    \n\n.resetalive\
+#    \nUsage: Resets the user to default."
+#    }
+#)
