@@ -40,7 +40,7 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@register(outgoing=True, pattern=r"^.filter (.*)")
+@register(outgoing=True, pattern=r"^.fil (.*)")
 async def add_new_filter(new_handler):
     """ For .filter command, allows adding new filters in a chat """
     try:
@@ -101,7 +101,7 @@ async def remove_a_filter(r_handler):
         )
 
 
-@register(outgoing=True, pattern="^.rmbotfilters (.*)")
+@register(outgoing=True, pattern="^.xrmbotfilters (.*)")
 async def kick_marie_filter(event):
     """ For .rmfilters command, allows you to kick all \
         Marie(or her clones) filters from a chat. """
@@ -146,17 +146,17 @@ async def filters_active(event):
     await event.edit(transact)
 
 
-CMD_HELP.update(
-    {
-        "filter": ".filters\
-    \nUsage: Lists all active userbot filters in a chat.\
-    \n\n.filter <keyword> <reply text> or reply to a message with .filter <keyword>\
-    \nUsage: Saves the replied message as a reply to the 'keyword'.\
-    \nThe bot will reply to the message whenever 'keyword' is mentioned.\
-    \nWorks with everything from files to stickers.\
-    \n\n.stop <filter>\
-    \nUsage: Stops the specified filter.\
-    \n\n.rmbotfilters <marie/rose>\
-    \nUsage: Removes all filters of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
-    }
-)
+#CMD_HELP.update(
+#    {
+#        "filter": ".filters\
+#    \nUsage: Lists all active userbot filters in a chat.\
+#    \n\n.filter <keyword> <reply text> or reply to a message with .filter <keyword>\
+#    \nUsage: Saves the replied message as a reply to the 'keyword'.\
+#    \nThe bot will reply to the message whenever 'keyword' is mentioned.\
+#    \nWorks with everything from files to stickers.\
+#    \n\n.stop <filter>\
+#    \nUsage: Stops the specified filter.\
+#    \n\n.rmbotfilters <marie/rose>\
+#    \nUsage: Removes all filters of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
+#    }
+#)
