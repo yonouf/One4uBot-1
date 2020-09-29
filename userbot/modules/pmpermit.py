@@ -381,11 +381,17 @@ async def add_pmsg(cust_msg):
                 f"Using default message: \n\n`{DEF_UNAPPROVED_MSG}`"
             )
 
-
+@register(outgoing=True, pattern="^.pmpermit$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ ρмρεямιт ⊙"
+                       "\n⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off "
+                       "⊙ .noton Notif On ⊙ .chin Chat Info ⊙ .pu Purge ⊙ .purgeme Purge Me ⊙ .d Delete "
+                       "⊙ .ed Edit ⊙ .sd Self Destruction ⊙")
+    
 CMD_HELP.update(
     {
         "pmpermit": 
         "⊙ ρмρεямιт ⊙\n⊙ .app Approve ⊙ .dis Disapprove ⊙ .bl Block ⊙ .ubl Unblock ⊙ .notoff Notif Off ⊙ .noton Notif On ⊙"
-        " .chin Chat Info ⊙ .pg Purge ⊙ .purgeme Purge Me ⊙ .d Delete ⊙ .ed Edit ⊙ .sd Self Destruction ⊙"
+        " .chin Chat Info ⊙ .pu Purge ⊙ .purgeme Purge Me ⊙ .d Delete ⊙ .ed Edit ⊙ .sd Self Destruction ⊙"
     }
 )
