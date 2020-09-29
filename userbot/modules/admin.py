@@ -1023,14 +1023,15 @@ async def dumtyer(dumtter):
 async def dumtyer(dumtter):
     await dumtter.edit("⊙ α∂мιη ⊙\n"
                        "⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙"
-                       " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .fil Filter \n"
-                       "⊙ .fb Fed Ban ⊙ .uf Unban Fed ⊙ .adf Add Fed ⊙ .df Delete Fed ⊙ .cf Clear All Fed ⊙ .lf List Fed ⊙")
+                       " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .fil Filter ⊙"
+                       "\n⊙ ғε∂εяαтιση ⊙"
+                       "\n⊙ .fb Fed Ban ⊙ .uf Unban Fed ⊙ .adf Add Fed ⊙ .df Delete Fed ⊙ .cf Clear All Fed ⊙ .lf List Fed ⊙")
 
 CMD_HELP.update(
     {
         "admin": 
         "⊙ α∂мιη ⊙\n⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙"
-        " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .fil Filter \n"
+        " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .fil Filter ⊙\n"
         "⊙ .fb Fed Ban ⊙ .uf Unban Fed ⊙ .adf Add Fed ⊙ .df Delete Fed ⊙ .cf Clear All Fed ⊙ .lf List Fed ⊙"
     }
 )
