@@ -1288,7 +1288,7 @@ async def check_progress_for_dl(gdrive, gid, previous):
 
 @register(outgoing=True, pattern="^.gdrive$")
 async def dumtyer(dumtter):
-    await dumtter.edit(""⊙ g∂яιvε ⊙"
+    await dumtter.edit("⊙ g∂яιvε ⊙"
                        "\n⊙ .gdauth : generate token to enable all cmd google drive service. "
                        "This only need to run once in life time."
                        "\n⊙ .gdreset : reset your token if something bad happened or change drive acc."
