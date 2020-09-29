@@ -210,6 +210,13 @@ async def _(dyno):
     await dyno.edit(f"Heroku logs Pasted to [NEKOPOI]({url})")
     return os.remove("logs.txt")
 
+@register(outgoing=True, pattern="^.userbot$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ υsεявσт ⊙\n"
+                       "⊙ .bv Bot Version ⊙ .upd <now or deploy> Update UserBot ⊙ .usg Usage ⊙ .set var <new var> <value> Set Vars ⊙"
+                       " .get var <var> Info Vars ⊙ .del var <var> Delete Vars ⊙ .logs Logs Heroku ⊙ .t Terminal ⊙ .sleep "
+                       "⊙ .shutdown ⊙ .repo Repository ⊙ .ls Files ⊙ .comm Commit ⊙ .git GitHub ⊙")
+
 
 CMD_HELP.update(
     {
