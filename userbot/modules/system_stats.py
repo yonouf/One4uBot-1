@@ -240,6 +240,7 @@ async def amireallyalive(alive):
         f"⊙ • Modules           : {len(modules)} Modules\n"
         f"⊙ • One4uBot        : Ver.{USERBOT_VERSION}\n"
         f"⊙ • Uptime             : {uptime}\n"
+        "\n⊙ Usage .menu for Details ⊙"
     )
     if ALIVE_LOGO:
         try:
