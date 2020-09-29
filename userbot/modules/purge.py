@@ -13,7 +13,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.pg$")
+@register(outgoing=True, pattern="^.pu$")
 async def fastpurger(purg):
     """ For .purge command, purge all messages starting from the reply. """
     chat = await purg.get_input_chat()
