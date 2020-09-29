@@ -238,20 +238,29 @@ async def check_progress_for_dl(gid, event, previous):
                     )
                 )
 
-
+@register(outgoing=True, pattern="^.download$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ ∂σωηℓσα∂ ⊙"
+                       "\n⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙"
+                       " .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙"
+                       "\n⊙ мυsιc ⊙"
+                       "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
+                       "\n⊙ .son <artist - title> @WooMaiBot ⊙"
+                       "\n⊙ .sof <artist - title> @SpotifyMusicDownloaderBot ⊙"
+                       "\n⊙ .deez <spotify|deezer link> <format> ⊙"
+                       "\n⊙  format deez : `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙"
 CMD_HELP.update(
     {
         "download": 
-        "⊙ ∂σωηℓσα∂ ⊙\n⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙ "
-        "\n⊙ .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙" 
-        "\n⊙ .songn <artist - title> @WooMaiBot ⊙"
-        "\n⊙ .songl <spotify|deezer Link> @MusicsHunterBot ⊙"
-        "\n⊙ .songf <artist - title> @SpotifyMusicDownloaderBot ⊙"
-        "\n⊙ .songn now @WooMaiBot ⊙"
-        "\n⊙ .songf now @SpotifyMusicDownloaderBot ⊙"
-        "\n⊙ .vsong <artist - title> ⊙"
+        "⊙ ∂σωηℓσα∂ ⊙"
+        "\n⊙ .apause Pause ⊙ .aresume Resume ⊙ .aclear CLear ⊙"
+        " .ashow Show ⊙ .down Download ⊙ .upl Upload ⊙"
+        "\n⊙ мυsιc ⊙"
+        "\n⊙ .rip<au|vi> Rip Audio Video ⊙" 
+        "\n⊙ .son <artist - title> @WooMaiBot ⊙"
+        "\n⊙ .sof <artist - title> @SpotifyMusicDownloaderBot ⊙"
         "\n⊙ .deez <spotify|deezer link> <format> ⊙"
-        "\n⊙  format `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙"
-        "\n⊙ .rip<au|vi> Rip Audio Video ⊙"
+        "\n⊙  format deez : `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙"
+        
     }
 )
