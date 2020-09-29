@@ -248,7 +248,7 @@ async def dumtyer(dumtter):
                        "\n⊙ .son <artist - title> @WooMaiBot ⊙"
                        "\n⊙ .sof <artist - title> @SpotifyMusicDownloaderBot ⊙"
                        "\n⊙ .deez <spotify|deezer link> <format> ⊙"
-                       "\n⊙  format deez : `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙"
+                       "\n⊙  format deez : `FLAC` `MP3_320` `MP3_256` `MP3_128` ⊙")
 CMD_HELP.update(
     {
         "download": 
