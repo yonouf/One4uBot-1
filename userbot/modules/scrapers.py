@@ -684,11 +684,17 @@ async def wolfram(wvent):
             BOTLOG_CHATID, f".wolfram {i} was executed successfully"
         )
 
-
+@register(outgoing=True, pattern="^.miscs$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ мιcsc ⊙\n"
+                       "⊙ .g Google ⊙ .img Image ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙"
+                       " .la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg <m|t> Telegraph ⊙ .ss ScreenShot "
+                       "⊙ .ly BitLy ⊙ .ty Type ⊙ .str Stretch ⊙ .ka Stickers ⊙ .q Quotly ⊙\n"
+                       "⊙ .fig Figlet Styles `slant` `3D` `5line` `alpha` `banner` `doh` `iso` `letter` `allig` `dotm` `bubble` `bulb` `digi` ⊙")
 CMD_HELP.update({
             "miscs": 
-            "⊙ мιcsc ⊙\n⊙ .img Image ⊙ .g Google ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙ "
-            ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg Telegraph ⊙ .ss ScreenShot "
+            "⊙ мιcsc ⊙\n⊙ .g Google ⊙ .img Image ⊙ .yt YouTube ⊙ .tr Translate ⊙ .tt Text to Speech ⊙ "
+            ".la <tt|tr> Languange ⊙ .ud Urban Dict ⊙ .tg <m|t> Telegraph ⊙ .ss ScreenShot "
             "⊙ .ly BitLy ⊙ .ty Type ⊙ .str Stretch ⊙ .ka Stickers ⊙ .q Quotly ⊙\n"
             "⊙ .fig Figlet Styles `slant` `3D` `5line` `alpha` `banner` `doh` `iso` `letter` `allig` `dotm` `bubble` `bulb` `digi` ⊙"
     }
