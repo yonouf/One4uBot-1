@@ -1018,6 +1018,13 @@ async def _(event):
 @register(outgoing=True, pattern="^.menu$")
 async def dumtyer(dumtter):
     await dumtter.edit("⊙ sυвмεηυ ⊙\n⊙ admin ⊙ download ⊙ gdrive ⊙ userbot ⊙ pmpermit ⊙ miscs ⊙\n⊙ Usage .h subsmenu for Details. ⊙")
+    
+@register(outgoing=True, pattern="^.admin$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ α∂мιη ⊙\n"
+                       "⊙ .pro Promote ⊙ .dem Demote ⊙ .b Ban ⊙ .ub UnBan ⊙ .m Mute ⊙ .um UnMute ⊙ .zo Zombies ⊙"
+                       " .pin Pin ⊙ .k Kick ⊙ .abl Add Blacklist ⊙ .lbl List Blacklist ⊙ .rbl Remove Blacklist ⊙ .fil Filter \n"
+                       "⊙ .fb Fed Ban ⊙ .uf Unban Fed ⊙ .adf Add Fed ⊙ .df Delete Fed ⊙ .cf Clear All Fed ⊙ .lf List Fed ⊙")
 
 CMD_HELP.update(
     {
