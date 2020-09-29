@@ -1303,11 +1303,12 @@ async def dumtyer(dumtter):
                        "\n⊙ .gdf rm : Delete files/folders in gdrive."
                        "\n⊙ Can't be undone, this method skipping file trash, so be caution..."
                        "\n⊙ .gdfset put : Change upload directory in gdrive."
-                       "\n⊙ .gdfset rm : remove set parentId from cmd\n.gdfset put "
-                       "into **G_DRIVE_FOLDER_ID** and if empty upload will go to root."
-                       "\n\n⊙ NOTES : for .gdlist you can combine -l and -p flags with or without name "
-                       "at the same time, it must be `-l` flags first before use `-p` flags. "
-                       "And by default it lists from latest 'modifiedTime' and then folders. ⊙")
+                       "\n⊙ .gdfset rm : remove set parentId from cmd."
+                       "\n⊙ .gdfset : put into **G_DRIVE_FOLDER_ID** and if empty upload will go to root."
+                       "\n\n⊙ NOTES ⊙"
+                       "\n⊙ for .gdlist you can combine -l and -p flags with or without name "
+                       "at the same time, it must be `-l` flags first before use `-p` flags. ⊙"
+                       "\n⊙ And by default it lists from latest 'modifiedTime' and then folders. ⊙")
 CMD_HELP.update(
     {
         "gdrive": 
@@ -1326,10 +1327,11 @@ CMD_HELP.update(
         "\n⊙ .gdf rm : Delete files/folders in gdrive."
         "\n⊙ Can't be undone, this method skipping file trash, so be caution..."
         "\n⊙ .gdfset put : Change upload directory in gdrive."
-        "\n⊙ .gdfset rm : remove set parentId from cmd\n.gdfset put "
-        "into **G_DRIVE_FOLDER_ID** and if empty upload will go to root."
-        "\n\n⊙ NOTES : for .gdlist you can combine -l and -p flags with or without name "
-        "at the same time, it must be `-l` flags first before use `-p` flags. "
-        "And by default it lists from latest 'modifiedTime' and then folders. ⊙"
+        "\n⊙ .gdfset rm : remove set parentId from cmd."
+        "\n⊙ .gdfset : put into **G_DRIVE_FOLDER_ID** and if empty upload will go to root."
+        "\n\n⊙ NOTES ⊙"
+        "\n⊙ for .gdlist you can combine -l and -p flags with or without name "
+        "at the same time, it must be `-l` flags first before use `-p` flags. ⊙"
+        "\n⊙ And by default it lists from latest 'modifiedTime' and then folders. ⊙"
     }
 )
