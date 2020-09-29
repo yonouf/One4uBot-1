@@ -231,16 +231,15 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        "⊙ One4uBot on . . . . . ⊙\n"
-        "\n"
-        f"⊙ • Telethon        : Ver.{version.__version__}\n"
-        f"⊙ • Python           : Ver.{python_version()}\n"
-        f"⊙ • User               : {DEFAULTUSER}\n"
-        f"⊙ • Running on      : {repo.active_branch.name} Branch\n"
-        f"⊙ • Modules           : {len(modules)} Modules\n"
-        f"⊙ • One4uBot        : Ver.{USERBOT_VERSION}\n"
-        f"⊙ • Uptime             : {uptime}\n"
-        "\n⊙ Usage .menu for Details ⊙"
+        f"⊙ • UserBot Loaded by {DAFAULTUSER} • ⊙"
+        "\n\n"
+        f"⊙ • Python Ver.{python_version()}\n"
+        f"⊙ • Telethon Ver.{version.__version__}\n"
+        f"⊙ • One4uBot Ver.{USERBOT_VERSION}\n"
+        f"⊙ • Loaded Modules {len(modules)}\n"
+        f"⊙ • UserBot Uptime {uptime}\n"
+        f"⊙ • Running on Branch {repo.active_branch.name}\n"
+        "\n⊙ • Usage .menu for Available Commands • ⊙"
     )
     if ALIVE_LOGO:
         try:
@@ -269,7 +268,7 @@ async def amireallyaliveuser(username):
     await username.edit("`" f"{output}" "`")
 
 
-@register(outgoing=True, pattern="^.resetalive$")
+@register(outgoing=True, pattern="^.xresetalive$")
 async def amireallyalivereset(ureset):
     """ For .resetalive command, reset the username in the .alive command. """
     global DEFAULTUSER
