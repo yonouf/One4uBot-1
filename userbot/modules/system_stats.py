@@ -231,7 +231,7 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"⊙ • UserBot Loaded by {DAFAULTUSER} • ⊙"
+        f"⊙ • UserBot Loaded by {DEFAULTUSER} • ⊙"
         "\n\n"
         f"⊙ • Python Ver.{python_version()}\n"
         f"⊙ • Telethon Ver.{version.__version__}\n"
