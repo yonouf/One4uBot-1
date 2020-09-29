@@ -9,7 +9,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.h(?: |$)(.*)")
+@register(outgoing=True, pattern="^.xh(?: |$)(.*)")
 async def help(event):
     """ For .help command,"""
     args = event.pattern_match.group(1).lower()
@@ -25,5 +25,5 @@ async def help(event):
             string += " ⊙ "
         await event.edit(
             f"{string}"
-            "\n.h <module name> for Details."
+            "\n.<module name> for Details."
         )
